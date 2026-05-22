@@ -1,0 +1,4178 @@
+<!doctype html>
+<html lang="en" class="tbm-dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dallas Video Production | Think Branded Media</title>
+<meta name="description" content="Dallas video production for brands done with safe, forgettable content. Strategy-led, cinematically crafted, built to perform. See the work →">
+
+<link rel="stylesheet" href="https://use.typekit.net/xkw6kfk.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,800;1,900&family=Barlow+Semi+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap">
+<!-- Extra fonts for the sub-hero "chaos" type experiment — wide style variety so randomization reads visually -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Permanent+Marker&family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Space+Grotesk:wght@500;700&family=Major+Mono+Display&family=DM+Serif+Display:ital@0;1&family=Rubik+Mono+One&family=Abril+Fatface&display=swap">
+
+<style>
+/* ============================================================
+   TBM Homepage v2 — full 11 sections + flare pass
+   ============================================================ */
+:root {
+  --tbm-impact-yellow: #FFD500;
+  --tbm-signal-orange: #E8821A;
+  --tbm-stock-mahogany: #8E331A;
+  --tbm-master-black:  #0B0B0B;
+  --tbm-script-white:  #FAF9F9;
+  --tbm-ink-900: #0B0B0B; --tbm-ink-800: #1A1A1A; --tbm-ink-700: #242424;
+  --tbm-ink-600: #3A3A3A; --tbm-ink-500: #6A6A6A; --tbm-ink-400: #9A9A9A;
+  --tbm-ink-300: #C9C9C9; --tbm-ink-200: #E6E4E2; --tbm-ink-100: #F1EFED;
+  --tbm-ink-050: #FAF9F9;
+  --font-display: 'zuume','Zuume','Barlow Condensed',Impact,'Helvetica Neue',sans-serif;
+  --font-body: 'Barlow Semi Condensed','Helvetica Neue',Arial,sans-serif;
+  --font-mono: 'JetBrains Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --fs-mega: clamp(96px,14vw,240px);
+  --fs-h1: clamp(56px,8vw,128px);
+  --fs-h2: clamp(48px,6vw,96px);
+  --fs-h3: clamp(28px,2.6vw,40px);
+  --fs-body: 16px; --fs-small: 14px; --fs-micro: 11px;
+  --lh-tight: 0.88;
+  --space-4: 16px; --space-5: 24px; --space-6: 32px;
+  --space-7: 48px; --space-8: 64px; --space-9: 96px; --space-10: 140px;
+  --ease-out: cubic-bezier(0.2,0.8,0.2,1);
+  --ease-snap: cubic-bezier(0.7,0,0.2,1);
+  --dur-fast: 120ms; --dur-base: 220ms; --dur-slow: 420ms;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { background: var(--tbm-master-black); }
+body {
+  background: var(--tbm-master-black); color: var(--tbm-script-white);
+  font-family: var(--font-body); font-size: var(--fs-body);
+  line-height: 1.5; overflow-x: hidden; cursor: none;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+@media (hover:none),(pointer:coarse) { body { cursor: auto; } }
+h1,h2,h3,h4 {
+  font-family: var(--font-display);
+  font-weight: 900; font-style: italic;
+  letter-spacing: -0.015em; line-height: var(--lh-tight);
+  text-transform: uppercase; margin: 0;
+}
+
+/* ============ CINEMATIC LOADER (first paint) ============ */
+.tbm-loader {
+  position: fixed; inset: 0; z-index: 9000;
+  background: var(--tbm-master-black);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 40px; transition: clip-path 1200ms cubic-bezier(0.7,0,0.2,1);
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+}
+.tbm-loader.is-done {
+  clip-path: polygon(0 0,100% 0,100% 0,0 0);
+  pointer-events: none;
+}
+.tbm-loader__count {
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.4em; color: var(--tbm-impact-yellow);
+  text-transform: uppercase;
+}
+.tbm-loader__count .num {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(96px,12vw,180px); letter-spacing: -0.02em;
+  color: var(--tbm-script-white); display: block; line-height: 0.9;
+  margin-top: 8px;
+}
+.tbm-loader__bar {
+  width: clamp(240px,30vw,420px); height: 1px;
+  background: rgba(255,255,255,0.12); position: relative; overflow: hidden;
+}
+.tbm-loader__bar::after {
+  content: ""; position: absolute; inset: 0;
+  background: var(--tbm-impact-yellow);
+  transform: scaleX(var(--progress,0)); transform-origin: left;
+  transition: transform 80ms linear;
+}
+.tbm-loader__status {
+  position: absolute; bottom: 28px; left: 28px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.3em; color: var(--tbm-ink-400); text-transform: uppercase;
+}
+.tbm-loader__status .blink {
+  display: inline-block; width: 6px; height: 6px;
+  background: var(--tbm-impact-yellow); margin-right: 10px;
+  animation: tbm-blink 700ms infinite steps(2);
+}
+.tbm-loader__tag {
+  position: absolute; top: 28px; right: 28px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.3em; color: var(--tbm-ink-400); text-transform: uppercase;
+}
+@keyframes tbm-blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0.25; } }
+
+/* ============ CUSTOM CURSOR ============ */
+.tbm-cursor {
+  position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000;
+  transform: translate(-50%,-50%); will-change: transform;
+  filter: drop-shadow(0 0 6px rgba(255,213,0,0.35));
+}
+.tbm-cursor__shape {
+  transform-origin: center; transform-box: fill-box;
+  animation: tbm-cur-rot 7s linear infinite, tbm-cur-breathe 2.4s ease-in-out infinite;
+}
+.tbm-cursor.is-hot .tbm-cursor__shape {
+  animation: tbm-cur-rot 2.5s linear infinite, tbm-cur-breathe 1s ease-in-out infinite;
+}
+.tbm-cursor.is-hot { filter: drop-shadow(0 0 10px rgba(255,213,0,0.7)); }
+@keyframes tbm-cur-rot { to { transform: rotate(360deg) scale(var(--c-scale,1)); } }
+@keyframes tbm-cur-breathe { 0%,100% { --c-scale: 1.0; } 50% { --c-scale: 1.15; } }
+@media (prefers-reduced-motion:reduce) { .tbm-cursor__shape { animation: none; } }
+@media (hover:none),(pointer:coarse) { .tbm-cursor { display: none; } }
+.tbm-click-flash {
+  position: fixed; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--tbm-impact-yellow); pointer-events: none; z-index: 9998;
+  transform: translate(-50%,-50%); mix-blend-mode: screen;
+  animation: tbm-flash 520ms var(--ease-out) forwards;
+}
+@keyframes tbm-flash {
+  0% { transform: translate(-50%,-50%) scale(0.3); opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(6); opacity: 0; }
+}
+
+/* ============ NAV ============ */
+/* Soft gradient backdrop sits BEHIND the nav, not on it — guarantees text contrast
+   against the video without painting a hard bar. Fades out after ~140px so the
+   page below feels unframed. */
+.tbm-nav-backdrop {
+  position: fixed; top: 0; left: 0; right: 0; height: 140px;
+  pointer-events: none; z-index: 199;
+  background: linear-gradient(180deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0.10) 75%,
+    rgba(0,0,0,0)    100%);
+}
+.tbm-nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  padding: 20px 28px; font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.04em; color: var(--tbm-script-white);
+  pointer-events: none;
+}
+.tbm-nav > * { pointer-events: auto; }
+.tbm-nav__brand { display: inline-flex; align-items: center; text-decoration: none; color: inherit; line-height: 1; }
+.tbm-nav__brand-text {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: 24px; text-transform: uppercase; letter-spacing: -0.01em;
+  color: var(--tbm-script-white);
+  line-height: 1;
+}
+.tbm-nav__links {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 18px; font-family: var(--font-mono);
+}
+.tbm-nav__links a { text-decoration: none; color: inherit; padding: 6px 2px; transition: color var(--dur-fast) var(--ease-out); }
+.tbm-nav__links a::before { content: "("; opacity: 0.5; margin-right: 2px; }
+.tbm-nav__links a::after { content: ")"; opacity: 0.5; margin-left: 2px; }
+.tbm-nav__links a:hover { color: var(--tbm-impact-yellow); }
+.tbm-nav__right { justify-self: end; display: inline-flex; gap: 14px; align-items: center; }
+.tbm-nav__clock {
+  font-family: var(--font-mono); font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em; color: var(--tbm-impact-yellow); font-size: 11px;
+}
+.tbm-nav__quote {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em;
+  background: var(--tbm-impact-yellow); color: var(--tbm-master-black);
+  text-decoration: none; padding: 9px 16px 6px;
+  transition: transform var(--dur-fast) var(--ease-snap), box-shadow var(--dur-fast) var(--ease-snap);
+  box-shadow: 4px 4px 0 0 var(--tbm-master-black);
+}
+.tbm-nav__quote:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 0 var(--tbm-master-black); }
+
+/* ============ HERO ============ */
+.tbm-hero {
+  position: relative; min-height: 100vh;
+  background: var(--tbm-master-black); overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(80px,10vw,140px) clamp(28px,4vw,56px) clamp(60px,7vw,96px);
+}
+.tbm-hero__bg {
+  position: absolute; inset: 0; z-index: 0;
+  background: radial-gradient(ellipse at 65% 35%, rgba(232,130,26,0.18), transparent 55%),
+              radial-gradient(ellipse at 20% 80%, rgba(142,51,26,0.25), transparent 60%),
+              linear-gradient(180deg,#1a1410 0%,#0B0B0B 100%);
+}
+.tbm-hero__bg-iframe {
+  /* Video is 1.9:1 (cinematic) but the iframe is sized 16:9, so Vimeo letterboxes
+     a thin bar above the content. Shift the iframe up by 50px to push that bar
+     off-screen above the viewport. Bottom is already cropped by the section. */
+  position: absolute;
+  top: -50px; left: 50%;
+  transform: translateX(-50%);
+  width:  max(100vw, 177.78vh);   /* 16/9 of viewport height, but never less than full width */
+  height: max(100vh, 56.25vw);    /* 9/16 of viewport width,  but never less than full height */
+  border: 0; pointer-events: none;
+}
+.tbm-hero__gradient {
+  /* Default state: dims the video so the H1 + eyebrow read clearly.
+     Hides entirely (opacity:0) when .tbm-hero--playing is on — see rule below — so the
+     "Play hero reel" CTA lifts the veil and shows the full-color frame. */
+  position: absolute; inset: 0; z-index: 5; pointer-events: none;
+  background: linear-gradient(180deg,
+    rgba(11,11,11,0.55) 0%,
+    rgba(11,11,11,0.50) 30%,
+    rgba(11,11,11,0.70) 60%,
+    rgba(11,11,11,0.92) 100%);
+  transition: opacity var(--dur-slow) var(--ease-snap);
+}
+.tbm-hero__grain {
+  position: absolute; inset: 0; z-index: 6; pointer-events: none;
+  opacity: 0.22; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.tbm-hero__content { position: relative; z-index: 10; max-width: min(1280px,calc(100vw - 56px)); width: 100%; margin: 0 auto; }
+.tbm-hero__eyebrow {
+  display: inline-block; font-family: var(--font-mono); font-weight: 500;
+  font-size: var(--fs-micro); letter-spacing: 0.3em;
+  color: var(--tbm-impact-yellow); text-transform: uppercase;
+  margin: 0 0 var(--space-6); padding-left: 22px; position: relative;
+}
+.tbm-hero__eyebrow::before {
+  content: ""; position: absolute; left: 0; top: 50%;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--tbm-impact-yellow); transform: translateY(-50%);
+  box-shadow: 0 0 0 0 var(--tbm-impact-yellow); animation: tbm-pulse 2s infinite;
+}
+@keyframes tbm-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,213,0,0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(255,213,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,213,0,0); }
+}
+.tbm-hero__title {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: var(--fs-h1); line-height: 0.92; letter-spacing: -0.02em;
+  text-transform: uppercase; color: var(--tbm-script-white);
+  text-wrap: balance; margin: 0 0 var(--space-6);
+  padding: 0.08em 0.06em; max-width: 1200px;
+}
+.tbm-hero__title .y { color: var(--tbm-impact-yellow); }
+.tbm-hero__subhead {
+  font-family: var(--font-body); font-size: clamp(18px,1.4vw,22px);
+  font-weight: 400; line-height: 1.4; color: var(--tbm-ink-300);
+  max-width: 640px; margin: 0 0 var(--space-7);
+}
+.tbm-hero__cta-row { display: flex; align-items: center; gap: var(--space-6); flex-wrap: wrap; }
+.tbm-cta-primary {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 48px;
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: 16px; text-transform: uppercase; letter-spacing: 0.04em;
+  text-decoration: none; cursor: pointer;
+  background: var(--tbm-impact-yellow); color: var(--tbm-master-black);
+  padding: 14px 22px 11px;
+  box-shadow: 4px 4px 0 0 var(--tbm-master-black);
+  border: 2px solid var(--tbm-master-black);
+  transition: transform var(--dur-fast) var(--ease-snap), box-shadow var(--dur-fast) var(--ease-snap);
+}
+.tbm-cta-primary:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 0 var(--tbm-master-black); }
+.tbm-cta-primary:active { transform: translate(0,0); box-shadow: 2px 2px 0 0 var(--tbm-master-black); }
+.tbm-cta-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent; color: var(--tbm-script-white);
+  border: 0; padding: 14px 4px; font-family: var(--font-mono);
+  font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+  cursor: pointer; text-decoration: none;
+}
+.tbm-cta-secondary .play {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1.5px solid var(--tbm-script-white);
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.tbm-cta-secondary .play::before {
+  content: ""; width: 0; height: 0;
+  border-style: solid; border-width: 6px 0 6px 10px;
+  border-color: transparent transparent transparent var(--tbm-script-white);
+  margin-left: 3px;
+}
+.tbm-cta-secondary:hover .play { border-color: var(--tbm-impact-yellow); background: var(--tbm-impact-yellow); }
+.tbm-cta-secondary:hover .play::before { border-left-color: var(--tbm-master-black); }
+.tbm-cta-secondary:hover { color: var(--tbm-impact-yellow); }
+.tbm-hero__meta {
+  position: absolute; left: clamp(28px,4vw,56px); bottom: clamp(24px,3vw,40px);
+  z-index: 11; font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.25em; color: var(--tbm-ink-300); text-transform: uppercase;
+  max-width: 280px; line-height: 1.7;
+  /* JS sets --meta-opacity based on how close the CTA row is; fades smoothly when collision is imminent. */
+  opacity: var(--meta-opacity, 1);
+  transition: opacity 420ms var(--ease-out);
+  will-change: opacity;
+}
+.tbm-hero__meta .pulse {
+  display: inline-block; width: 6px; height: 6px;
+  border-radius: 50%; background: var(--tbm-impact-yellow);
+  margin-right: 8px; vertical-align: 1px; animation: tbm-pulse 2s infinite;
+}
+.tbm-hero__meta .rule { display: inline-block; width: 56px; height: 1px; background: var(--tbm-ink-500); margin: 6px 0; vertical-align: middle; }
+.tbm-hero__scroll-cue {
+  position: absolute; left: 50%; bottom: clamp(24px,3vw,36px);
+  transform: translateX(-50%); z-index: 11;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.4em;
+  color: var(--tbm-ink-400); text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.tbm-hero__scroll-cue::after {
+  content: ""; width: 1px; height: 44px;
+  background: linear-gradient(to bottom,var(--tbm-impact-yellow),transparent);
+  animation: tbm-scroll 1.6s infinite var(--ease-out); transform-origin: top;
+}
+@keyframes tbm-scroll {
+  0% { transform: scaleY(0); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ============ SECTION RULE divider ============ */
+.tbm-section-rule {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px clamp(28px,4vw,56px);
+  font-family: var(--font-mono); font-size: var(--fs-micro);
+  letter-spacing: 0.3em; color: var(--tbm-ink-400);
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: var(--tbm-master-black); position: relative; z-index: 12;
+}
+.tbm-section-rule .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--tbm-signal-orange); display: inline-block;
+  margin-right: 10px; vertical-align: 1px;
+}
+
+/* ============ TICKER MARQUEE divider — seamless infinite loop ============ */
+.tbm-ticker {
+  background: var(--tbm-impact-yellow); color: var(--tbm-master-black);
+  padding: 14px 0; overflow: hidden;
+  border-top: 2px solid var(--tbm-master-black);
+  border-bottom: 2px solid var(--tbm-master-black);
+}
+.tbm-ticker__track {
+  display: flex; width: max-content;
+  animation: tbm-ticker-anim 48s linear infinite;
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  text-transform: uppercase; letter-spacing: -0.005em;
+  font-size: clamp(22px,2.4vw,32px); line-height: 1;
+  white-space: nowrap; align-items: center;
+}
+.tbm-ticker__track:hover { animation-play-state: paused; }
+/* THREE identical copies → animation translates by -33.333% (= one full copy width).
+   Three copies guarantees the track is always wider than the viewport, so no gap is
+   ever visible during the loop. */
+.tbm-ticker__list {
+  display: flex; align-items: center; gap: 56px;
+  list-style: none; margin: 0; padding: 0 56px 0 0;
+  flex-shrink: 0;
+}
+.tbm-ticker__list li {
+  display: inline-flex; align-items: center; gap: 12px;
+  white-space: nowrap;
+}
+.tbm-ticker__list li .emj {
+  font-size: 0.85em;
+  filter: grayscale(0) saturate(0.9);
+  line-height: 1;
+}
+@keyframes tbm-ticker-anim {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+.tbm-ticker--dark { background: var(--tbm-master-black); color: var(--tbm-impact-yellow); border-color: var(--tbm-impact-yellow); }
+
+/* Scrolling black/white checkerboard bar — single strip */
+.tbm-ticker--checker {
+  height: 56px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'><rect width='1' height='1' fill='%23000'/><rect x='1' y='1' width='1' height='1' fill='%23000'/></svg>");
+  background-size: 56px 56px;
+  background-repeat: repeat;
+  animation: tbm-checker-scroll 6s linear infinite;
+}
+.tbm-ticker--checker:hover { animation-play-state: paused; }
+@keyframes tbm-checker-scroll {
+  from { background-position: 0 0; }
+  to   { background-position: 112px 0; }
+}
+
+/* ============ MARKER MOTIFS (lasso/brush/underline + scattered decorations) ============ */
+.tbm-lasso { position: relative; display: inline-block; padding: 4px 22px; }
+.tbm-lasso > span { position: relative; z-index: 2; }
+.tbm-lasso > svg {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  pointer-events: none; overflow: visible; z-index: 1;
+}
+.tbm-lasso path { fill: none; stroke: var(--tbm-signal-orange); stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; }
+
+.tbm-brush-bar {
+  position: relative; display: inline-block;
+  padding: 10px 24px 6px;
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  text-transform: uppercase; color: var(--tbm-script-white); z-index: 1;
+}
+.tbm-brush-bar::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--tbm-master-black);
+  border: 2.5px solid var(--tbm-script-white);
+  filter: url(#torn-edge);
+}
+.tbm-brush-bar.is-yellow::before { background: var(--tbm-impact-yellow); border-color: var(--tbm-master-black); }
+.tbm-brush-bar.is-yellow { color: var(--tbm-master-black); }
+.tbm-brush-bar .y { color: var(--tbm-impact-yellow); }
+.tbm-brush-bar .o { color: var(--tbm-signal-orange); }
+
+.tbm-underline-swoosh { position: relative; display: inline-block; padding: 0 8px; }
+.tbm-underline-swoosh > span { position: relative; z-index: 2; }
+.tbm-underline-swoosh > svg {
+  position: absolute; left: -4px; right: 0; bottom: -24px;
+  width: calc(100% + 8px); height: 44px;
+  pointer-events: none; overflow: visible;
+}
+.tbm-underline-swoosh path { fill: none; stroke: var(--tbm-signal-orange); stroke-linecap: round; stroke-linejoin: round; }
+
+.tbm-chip {
+  display: inline-block; background: var(--tbm-impact-yellow);
+  color: var(--tbm-master-black); padding: 4px 11px 1px;
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  font-size: 14px; line-height: 1.2;
+}
+.tbm-chip--orange { background: var(--tbm-signal-orange); color: var(--tbm-master-black); }
+.tbm-chip--mahogany { background: var(--tbm-stock-mahogany); color: var(--tbm-script-white); }
+.tbm-chip--dark { background: var(--tbm-master-black); color: var(--tbm-impact-yellow); border: 1.5px solid var(--tbm-impact-yellow); }
+
+.tbm-crossed { position: relative; display: inline-block; color: var(--tbm-ink-500); }
+.tbm-crossed::after {
+  content: ""; position: absolute; left: -3%; right: -3%; top: 52%;
+  height: 9px; background: var(--tbm-signal-orange); transform: rotate(-3deg);
+}
+
+/* Real TBM brand sticker PNGs (Brand Guidelines → EXPLORATIONS → STICKERS) */
+.tbm-sticker {
+  position: absolute; pointer-events: none; z-index: 3;
+  width: var(--w, 140px); height: auto;
+  transform: rotate(var(--rot,0deg));
+  opacity: var(--op,1);
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.45)) drop-shadow(0 0 1px rgba(0,0,0,0.4));
+  -webkit-user-drag: none; user-select: none;
+}
+.tbm-sticker--xs { --w: 56px; }
+.tbm-sticker--sm { --w: 96px; }
+.tbm-sticker--md { --w: 150px; }
+.tbm-sticker--lg { --w: 210px; }
+.tbm-sticker--xl { --w: 280px; }
+.tbm-sticker--xxl { --w: 360px; }
+/* On light-bg sections, softer shadow */
+.tbm-logo-band .tbm-sticker { filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18)); }
+/* Subtle hand-applied wobble */
+@keyframes tbm-sticker-wobble {
+  0%,100% { transform: rotate(var(--rot,0deg)) translate(0,0); }
+  50%     { transform: rotate(calc(var(--rot,0deg) + 0.8deg)) translate(0,-2px); }
+}
+.tbm-sticker--wobble { animation: tbm-sticker-wobble 5s ease-in-out infinite; }
+
+/* Scattered CSS marker decorations (kept alongside stickers for variety) */
+.tbm-deco {
+  position: absolute; pointer-events: none; z-index: 2;
+  transform: rotate(var(--rot,0deg));
+  opacity: var(--op,0.85);
+}
+.tbm-deco--lasso { width: clamp(120px,12vw,180px); height: 80px; }
+.tbm-deco--lasso svg { width: 100%; height: 100%; overflow: visible; }
+.tbm-deco--lasso path { fill: none; stroke: var(--tbm-signal-orange); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.tbm-deco--brush {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  text-transform: uppercase; padding: 8px 20px 4px;
+  background: var(--tbm-master-black); border: 2.5px solid var(--tbm-script-white);
+  color: var(--tbm-script-white); font-size: 18px; letter-spacing: 0.04em;
+  filter: url(#torn-edge);
+}
+.tbm-deco--chip { font-family: var(--font-display); font-weight: 900; font-style: italic; }
+.tbm-deco--hatched {
+  width: clamp(90px,8vw,140px); height: clamp(50px,5vw,80px);
+  background-image: repeating-linear-gradient(-45deg, var(--tbm-signal-orange) 0 2px, transparent 2px 9px);
+  opacity: 0.35;
+}
+.tbm-deco--arrow {
+  font-family: var(--font-mono); font-size: clamp(40px,5vw,76px);
+  color: var(--tbm-impact-yellow); line-height: 1; font-weight: 700;
+}
+.tbm-deco--star {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  color: var(--tbm-signal-orange); font-size: clamp(36px,4vw,60px);
+}
+.tbm-deco--scribble svg { width: clamp(80px,7vw,120px); height: 60px; overflow: visible; }
+.tbm-deco--scribble path { fill: none; stroke: var(--tbm-impact-yellow); stroke-width: 3; stroke-linecap: round; }
+
+/* ============ SUB-HERO — magazine-spread positioning page ============ */
+.tbm-sub-hero {
+  background: var(--tbm-master-black);
+  padding: clamp(72px,8vw,140px) clamp(28px,4vw,56px) clamp(80px,9vw,160px);
+  position: relative; z-index: 11; overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.tbm-sub-hero__bg {
+  position: absolute; inset: 0;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/texture_canvas_2.png');
+  background-size: cover; background-position: center;
+  opacity: 0.12; mix-blend-mode: screen;
+  pointer-events: none;
+}
+.tbm-sub-hero__bg-2 {
+  position: absolute; inset: 0;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/divider_2b.png');
+  background-size: cover; background-position: 80% 30%;
+  opacity: 0.06; mix-blend-mode: screen;
+  pointer-events: none;
+}
+.tbm-sub-hero__top {
+  position: absolute; top: 28px;
+  left: clamp(28px,4vw,56px); right: clamp(28px,4vw,56px);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em;
+  color: var(--tbm-ink-400); text-transform: uppercase;
+  z-index: 3;
+}
+.tbm-sub-hero__top .pulse {
+  display: inline-block; width: 6px; height: 6px;
+  background: var(--tbm-impact-yellow); border-radius: 50%;
+  margin-right: 10px; vertical-align: 1px;
+  animation: tbm-pulse 2s infinite;
+}
+.tbm-sub-hero__top .right { display: inline-flex; align-items: center; gap: 16px; }
+.tbm-sub-hero__top .right .div { width: 1px; height: 12px; background: var(--tbm-ink-600); }
+
+/* Watermark page-number — sits behind the pull quote like a magazine page mark */
+.tbm-sub-hero__pagenum {
+  position: absolute; top: 60px; left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(280px, 32vw, 540px);
+  line-height: 1; letter-spacing: -0.04em;
+  -webkit-text-stroke: 2px rgba(255,213,0,0.10);
+  color: transparent;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.tbm-sub-hero__inner {
+  max-width: 1320px; margin: 60px auto 0;
+  display: grid; grid-template-columns: 1fr 2.4fr; gap: clamp(40px,6vw,96px);
+  align-items: end;
+  position: relative; z-index: 2;
+}
+@media (max-width: 880px) {
+  .tbm-sub-hero__inner { grid-template-columns: 1fr; gap: 36px; align-items: start; }
+  .tbm-sub-hero__pagenum { font-size: 220px; top: 40px; }
+}
+
+/* Left column — captioned aside */
+.tbm-sub-hero__aside { position: relative; }
+.tbm-sub-hero__caption {
+  font-family: var(--font-body); font-size: clamp(14px,1vw,16px);
+  line-height: 1.6; color: var(--tbm-ink-300);
+  margin: 0; max-width: 340px;
+  padding-left: 18px;
+  border-left: 2px solid var(--tbm-impact-yellow);
+}
+.tbm-sub-hero__caption strong {
+  color: var(--tbm-script-white); font-weight: 700;
+}
+.tbm-sub-hero__more {
+  display: inline-block; margin-top: 22px;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em;
+  color: var(--tbm-impact-yellow); text-transform: uppercase;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.tbm-sub-hero__more::before { content: "↳ "; opacity: 0.7; }
+.tbm-sub-hero__more:hover { color: var(--tbm-script-white); }
+
+/* Right column — pull-quote masthead */
+.tbm-sub-hero__pullquote {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(44px,6.4vw,108px);
+  line-height: 0.95; letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--tbm-script-white);
+  margin: 0;
+  text-wrap: balance;
+  position: relative;
+}
+.tbm-sub-hero__pullquote .qo,
+.tbm-sub-hero__pullquote .qc {
+  color: var(--tbm-impact-yellow);
+  opacity: 0.85;
+}
+.tbm-sub-hero__pullquote .seo {
+  /* "Dallas video production" — gold, SEO-critical phrase */
+  color: var(--tbm-impact-yellow);
+}
+.tbm-sub-hero__pullquote .hot {
+  /* "doesn't act like one" — wrapped so we can underline + highlight */
+  position: relative; display: inline-block; white-space: nowrap;
+}
+.tbm-sub-hero__pullquote .hot .underline {
+  position: absolute; left: -2%; right: -2%; bottom: -0.04em;
+  height: 0.22em; width: 104%;
+  pointer-events: none; overflow: visible;
+}
+.tbm-sub-hero__pullquote .hot .underline path {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  transition: stroke-dashoffset 1400ms var(--ease-out);
+}
+.tbm-sub-hero.is-in .tbm-sub-hero__pullquote .hot .underline path {
+  stroke-dashoffset: 0;
+}
+
+/* Quote-mark giant glyphs */
+.tbm-sub-hero__pullquote::before {
+  content: "“";
+  position: absolute;
+  top: -0.4em; left: -0.16em;
+  font-size: 2.2em; line-height: 1;
+  color: rgba(255,213,0,0.18);
+  font-family: var(--font-display); font-style: italic;
+  pointer-events: none;
+}
+
+/* Stamp badge */
+.tbm-sub-hero__stamp {
+  position: absolute; bottom: 36px; right: clamp(28px,4vw,56px);
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.3em;
+  color: var(--tbm-impact-yellow); text-transform: uppercase;
+  padding: 9px 16px 7px;
+  border: 1.5px solid rgba(255,213,0,0.45);
+  transform: rotate(-3deg);
+  background: rgba(11,11,11,0.55);
+  z-index: 3;
+  backdrop-filter: blur(2px);
+}
+.tbm-sub-hero__stamp .dot {
+  width: 4px; height: 4px; background: var(--tbm-impact-yellow); border-radius: 50%;
+}
+.tbm-sub-hero__stamp::before, .tbm-sub-hero__stamp::after {
+  content: ""; width: 18px; height: 1px;
+  background: rgba(255,213,0,0.45);
+}
+
+/* Transparent footnote — owns the fact this section is partly for SEO */
+.tbm-sub-hero__ps {
+  margin-top: clamp(28px,3.5vw,52px);
+  font-family: var(--font-body);
+  font-size: clamp(13px,0.95vw,15px);
+  line-height: 1.65;
+  color: var(--tbm-ink-300);
+  font-style: italic;
+  max-width: 640px;
+  padding-left: 20px;
+  border-left: 2px solid rgba(255,213,0,0.55);
+}
+.tbm-sub-hero__ps::before {
+  content: "P.S.";
+  font-family: var(--font-display); font-style: italic; font-weight: 900;
+  color: var(--tbm-impact-yellow);
+  margin-right: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1.05em;
+}
+.tbm-sub-hero__ps em {
+  font-style: normal;
+  color: var(--tbm-script-white);
+  font-weight: 600;
+  /* "Dallas video production" — keep prominent because that's the whole point */
+}
+.tbm-sub-hero__ps strong {
+  font-style: normal;
+  color: var(--tbm-script-white);
+  font-weight: 700;
+}
+
+/* Sub-hero entrance — pull quote fades + slides on enter */
+.tbm-sub-hero__pullquote { opacity: 0; transform: translateY(28px); transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out); }
+.tbm-sub-hero.is-in .tbm-sub-hero__pullquote { opacity: 1; transform: translateY(0); }
+.tbm-sub-hero__aside { opacity: 0; transform: translateY(20px); transition: opacity 700ms var(--ease-out) 200ms, transform 700ms var(--ease-out) 200ms; }
+.tbm-sub-hero.is-in .tbm-sub-hero__aside { opacity: 1; transform: translateY(0); }
+.tbm-sub-hero__ps { opacity: 0; transform: translateY(14px); transition: opacity 700ms var(--ease-out) 400ms, transform 700ms var(--ease-out) 400ms; }
+.tbm-sub-hero.is-in .tbm-sub-hero__ps { opacity: 1; transform: translateY(0); }
+
+/* ============ CHAOS TEXT — random fonts per letter, re-rolls on hover ============ */
+.tbm-sub-hero__chaos {
+  position: relative; z-index: 2;
+  max-width: 1180px; margin: clamp(40px,5vw,80px) auto 0;
+  font-size: clamp(20px,2.2vw,34px);
+  line-height: 1.4;
+  color: var(--tbm-script-white);
+  letter-spacing: 0.005em;
+  font-weight: 600;
+}
+.tbm-sub-hero__chaos br + br { line-height: 0.6em; }
+.tbm-sub-hero__chaos .seo-y { color: var(--tbm-impact-yellow); }
+.tbm-sub-hero__chaos .ch {
+  display: inline-block;
+  transition: font-family 240ms ease, color 240ms ease, transform 240ms cubic-bezier(.2,.85,.25,1);
+  will-change: transform;
+}
+.tbm-sub-hero__chaos .ch:hover {
+  transform: translateY(-3px);
+  color: var(--tbm-impact-yellow);
+}
+/* Font palette — wide variety so the chaos reads visually */
+.tbm-sub-hero__chaos .f-1  { font-family: var(--font-display); font-weight: 900; font-style: italic; }
+.tbm-sub-hero__chaos .f-2  { font-family: 'Playfair Display', serif; font-weight: 900; font-style: italic; }
+.tbm-sub-hero__chaos .f-3  { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+.tbm-sub-hero__chaos .f-4  { font-family: 'Anton', sans-serif; letter-spacing: 0.01em; }
+.tbm-sub-hero__chaos .f-5  { font-family: 'Permanent Marker', cursive; }
+.tbm-sub-hero__chaos .f-6  { font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.4em; line-height: 0.7; }
+.tbm-sub-hero__chaos .f-7  { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+.tbm-sub-hero__chaos .f-8  { font-family: 'Major Mono Display', monospace; }
+.tbm-sub-hero__chaos .f-9  { font-family: 'DM Serif Display', serif; font-style: italic; }
+.tbm-sub-hero__chaos .f-10 { font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+.tbm-sub-hero__chaos .f-11 { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; font-style: italic; }
+.tbm-sub-hero__chaos .f-12 { font-family: 'Rubik Mono One', monospace; font-size: 0.85em; }
+.tbm-sub-hero__chaos .f-13 { font-family: 'Abril Fatface', serif; }
+
+.tbm-sub-hero__chaos-hint {
+  display: block;
+  margin-top: 28px;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--tbm-ink-500);
+  text-align: right;
+}
+.tbm-sub-hero__chaos-hint::before { content: "↳ "; color: var(--tbm-impact-yellow); }
+
+.tbm-sub-hero__chaos { opacity: 0; transform: translateY(20px); transition: opacity 800ms var(--ease-out) 100ms, transform 800ms var(--ease-out) 100ms; }
+.tbm-sub-hero.is-in .tbm-sub-hero__chaos { opacity: 1; transform: translateY(0); }
+
+/* Hero playing state */
+.tbm-hero--playing .tbm-hero__eyebrow,
+.tbm-hero--playing .tbm-hero__title,
+.tbm-hero--playing .tbm-hero__subhead,
+.tbm-hero--playing .tbm-hero__cta-row,
+.tbm-hero--playing .tbm-hero__meta,
+.tbm-hero--playing .tbm-hero__scroll-cue {
+  opacity: 0; transform: translateY(-40px);
+  transition: opacity var(--dur-slow) var(--ease-snap), transform var(--dur-slow) var(--ease-snap);
+}
+.tbm-hero--playing .tbm-hero__gradient { opacity: 0; }
+.tbm-hero--playing .tbm-hero__close { opacity: 1; pointer-events: auto; }
+.tbm-hero__close {
+  position: absolute; bottom: clamp(24px,3vw,36px); right: clamp(28px,4vw,56px);
+  z-index: 20; background: rgba(11,11,11,0.7);
+  border: 1px solid rgba(255,255,255,0.2); color: var(--tbm-script-white);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em;
+  text-transform: uppercase; padding: 10px 14px 8px; cursor: pointer;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--dur-slow) var(--ease-snap);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.tbm-hero__close::before { content: "✕"; font-family: var(--font-body); font-size: 14px; }
+
+/* ============ SECTION 2: LOGO BAND — dark, compact, seamless ============ */
+.tbm-logo-band {
+  background: var(--tbm-master-black);
+  padding: 28px 0;             /* much tighter — was var(--space-8) ~64px */
+  position: relative; overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.tbm-logo-band__eyebrow {
+  text-align: center; font-family: var(--font-mono); font-weight: 500;
+  font-size: 10px; letter-spacing: 0.4em;
+  color: var(--tbm-ink-400); text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.tbm-logo-band__viewport { overflow: hidden; }
+.tbm-logo-band__track {
+  display: flex; width: max-content;
+  /* Reversed direction — logo band scrolls RIGHT while ticker scrolls LEFT, opposing motion */
+  animation: tbm-marquee 56s linear infinite;
+  animation-direction: reverse;
+}
+.tbm-logo-band__track:hover { animation-play-state: paused; }
+.tbm-logo-band__list {
+  display: flex; align-items: center; gap: 64px;
+  list-style: none; margin: 0; padding: 0 64px 0 0;
+  flex-shrink: 0;
+}
+@keyframes tbm-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+.tbm-logo-band__item {
+  display: inline-flex; align-items: center; height: 56px;
+  opacity: 0.70; transition: opacity var(--dur-base) var(--ease-out);
+  white-space: nowrap;
+}
+.tbm-logo-band__item:hover { opacity: 1; }
+.tbm-logo-band__item img {
+  display: block; height: 100%; width: auto;
+  max-height: 56px;
+  filter: brightness(0) invert(1);   /* normalize any logo to pure white */
+}
+/* Per-logo height overrides — different brands have different visual weights even at the same height */
+.tbm-logo-band__item img[alt*="Caterpillar" i] { max-height: 48px; }
+.tbm-logo-band__item img[alt*="Patagonia" i]   { max-height: 32px; }   /* very wide aspect */
+.tbm-logo-band__item img[alt*="Hennessy" i]    { max-height: 36px; }
+.tbm-logo-band__item img[alt*="Amazon" i]      { max-height: 38px; }
+.tbm-logo-band__item img[alt*="Modelo" i]      { max-height: 50px; }
+.tbm-logo-band__item img[alt*="Scottish" i]    { max-height: 50px; }
+.tbm-logo-band__item .wordmark {
+  /* Fallback wordmark styling when we don't have an actual logo file */
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: 22px; line-height: 1; color: var(--tbm-script-white);
+  text-transform: uppercase; letter-spacing: 0.02em;
+}
+.tbm-logo-band__item .wordmark--serif {
+  font-family: 'Playfair Display', serif; font-style: normal; font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.tbm-logo-band__item .wordmark--condensed {
+  font-family: 'Bebas Neue', sans-serif; font-style: normal; font-weight: 400;
+  letter-spacing: 0.08em; font-size: 26px;
+}
+.tbm-logo-band__item .wordmark--mono {
+  font-family: 'JetBrains Mono', monospace; font-style: normal; font-weight: 500;
+  font-size: 16px; letter-spacing: 0;
+}
+.tbm-logo-band__item .wordmark--sans {
+  font-family: 'Space Grotesk', sans-serif; font-style: normal; font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ============ SECTION 3: BRAND POSITIONING — FULL-SCREEN STICKY MANIFESTO ============ */
+.tbm-manifesto {
+  position: relative;
+  height: 100vh;              /* One viewport tall — ScrollTrigger pin holds it during the per-word reveal */
+  background: var(--tbm-master-black);
+  overflow: hidden;
+}
+.tbm-manifesto__bg {
+  position: absolute; inset: 0;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/divider_3.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  filter: saturate(0.55) contrast(1.15);
+  pointer-events: none;
+}
+.tbm-manifesto__bg-2 {
+  position: absolute; inset: 0;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/cover-bubbles.png');
+  background-size: cover; background-position: 70% 40%;
+  opacity: 0.07;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+.tbm-manifesto__meta {
+  position: absolute; top: 32px; left: 32px; right: 32px; z-index: 5;
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.3em;
+  color: var(--tbm-ink-400); text-transform: uppercase;
+}
+.tbm-manifesto__meta .chip {
+  background: var(--tbm-impact-yellow); color: var(--tbm-master-black);
+  padding: 4px 10px 1px;
+  font-family: var(--font-display); font-style: italic; font-weight: 900;
+  letter-spacing: 0.04em;
+}
+.tbm-manifesto__sticky {
+  /* Was sticky — ScrollTrigger now handles the pin. Keep classname for layout. */
+  position: relative;
+  height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 clamp(28px,6vw,96px);
+  z-index: 2;
+}
+.tbm-manifesto__copy {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(56px,8.5vw,170px);
+  line-height: 0.92;
+  letter-spacing: -0.018em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--tbm-script-white);
+  position: relative; z-index: 2;
+  max-width: 1480px;
+  padding: 0.08em 0.06em;
+  margin: 0;
+  text-align: left;
+}
+.tbm-mword {
+  display: inline;
+  color: #2E2A26;                      /* near-invisible against master black */
+  transition: color 220ms var(--ease-out), text-shadow 220ms var(--ease-out);
+}
+.tbm-mword.is-lit {
+  color: #F5F2EC;
+  text-shadow: 0 0 24px rgba(255,213,0,0.25);
+}
+.tbm-mword.is-hot.is-lit { color: var(--tbm-impact-yellow); text-shadow: 0 0 30px rgba(255,213,0,0.5); }
+.tbm-mword.is-orange.is-lit { color: var(--tbm-signal-orange); text-shadow: 0 0 30px rgba(232,130,26,0.5); }
+.tbm-manifesto__scroll-hint {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.4em;
+  color: var(--tbm-ink-500); text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  z-index: 5;
+}
+.tbm-manifesto__scroll-hint::after {
+  content: ""; width: 1px; height: 36px;
+  background: linear-gradient(to bottom, var(--tbm-impact-yellow), transparent);
+  animation: tbm-scroll 1.8s infinite var(--ease-out); transform-origin: top;
+}
+
+/* Brand positioning supporting copy — below the manifesto */
+.tbm-positioning-body {
+  background: var(--tbm-master-black);
+  padding: var(--space-9) clamp(28px,4vw,56px);
+  position: relative;
+  /* overflow: visible so the sticker can overlap upward into the section above without getting clipped.
+     The bg child already uses inset:0 so it stays in bounds; polaroid rotations are small enough not to leak. */
+  overflow: visible;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.tbm-positioning-body__bg {
+  position: absolute; inset: 0;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/texture_canvas_1.png');
+  background-size: cover; opacity: 0.06;
+  mix-blend-mode: screen; pointer-events: none;
+}
+.tbm-positioning-body__inner {
+  position: relative; z-index: 2; max-width: 1320px; margin: 0 auto;
+  display: grid; grid-template-columns: minmax(280px, 1fr) 1.6fr; gap: clamp(40px,5vw,80px);
+  align-items: center;
+}
+@media (max-width: 980px) { .tbm-positioning-body__inner { grid-template-columns: 1fr; } }
+.tbm-positioning-body__copy p {
+  font-family: var(--font-body); font-size: clamp(15px,1vw,17px);
+  color: var(--tbm-ink-200); line-height: 1.6;
+  max-width: 480px; margin: 0 0 var(--space-5);
+}
+
+/* Big two-line headline — outlined opener + bold reveal with yellow phrase */
+.tbm-positioning-body__hl {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(40px,5.2vw,86px);
+  line-height: 0.93; letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin: clamp(8px,1vw,16px) 0 clamp(28px,3.5vw,48px);
+  text-wrap: balance;
+}
+.tbm-positioning-body__hl .small {
+  display: block;
+  font-size: 0.46em;
+  letter-spacing: 0.015em;
+  -webkit-text-stroke: 1.5px var(--tbm-ink-400);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 0.22em;
+}
+.tbm-positioning-body__hl .big {
+  display: block;
+  color: var(--tbm-script-white);
+}
+.tbm-positioning-body__hl .y {
+  color: var(--tbm-impact-yellow);
+  position: relative; display: inline-block;
+}
+.tbm-positioning-body__hl .y::after {
+  content: ""; position: absolute;
+  left: -2%; right: -2%; bottom: 0.04em; height: 0.18em;
+  background: rgba(255,213,0,0.18);
+  z-index: -1; pointer-events: none;
+}
+
+/* Unseen-work list — yellow dash bullets, scannable */
+.tbm-positioning-body__list {
+  list-style: none; padding: 0; margin: 0 0 clamp(24px,3vw,36px);
+  display: flex; flex-direction: column; gap: 8px;
+  max-width: 480px;
+}
+.tbm-positioning-body__list li {
+  font-family: var(--font-body); font-size: clamp(14px,0.95vw,16px);
+  line-height: 1.55; color: var(--tbm-ink-200);
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.tbm-positioning-body__list li::before {
+  content: ""; flex-shrink: 0;
+  width: 18px; height: 2px;
+  background: var(--tbm-impact-yellow);
+  margin-top: 0.65em;
+}
+.tbm-positioning-body__list li strong {
+  color: var(--tbm-script-white); font-weight: 700;
+}
+
+/* Italic kicker — closing punchline before the CTA */
+.tbm-positioning-body__kicker {
+  font-family: var(--font-display); font-style: italic; font-weight: 700;
+  font-size: clamp(18px,1.4vw,22px);
+  color: var(--tbm-ink-300);
+  line-height: 1.35;
+  margin: 0 0 clamp(24px,2.5vw,32px);
+  max-width: 460px;
+  padding-left: 16px;
+  border-left: 2px solid var(--tbm-impact-yellow);
+}
+
+.tbm-positioning-body__cta {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: var(--space-5);
+  color: var(--tbm-impact-yellow); text-decoration: none;
+  font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--tbm-impact-yellow); padding-bottom: 4px;
+}
+.tbm-positioning-body__cta:hover .arr { transform: translateX(4px); }
+.tbm-positioning-body__cta .arr { transition: transform var(--dur-fast) var(--ease-out); }
+
+/* BTS polaroid stack — random photos from a pool, ambient auto-shuffle, hover-to-front */
+.tbm-bts-stack {
+  position: relative;
+  width: 100%;
+  height: clamp(440px, 50vw, 620px);
+  perspective: 1400px;
+}
+.tbm-bts-card {
+  position: absolute;
+  width: clamp(200px, 21vw, 300px);
+  padding: 12px 12px 44px;
+  background: #f7f3ea;          /* off-white polaroid paper */
+  box-shadow:
+    0 26px 50px -16px rgba(0,0,0,0.7),
+    0 6px 14px rgba(0,0,0,0.3),
+    inset 0 0 0 1px rgba(0,0,0,0.04);
+  transform-style: preserve-3d;
+  transform-origin: center;
+  transition:
+    transform 700ms cubic-bezier(.2,.85,.25,1),
+    box-shadow 700ms ease;
+  cursor: pointer;
+}
+.tbm-bts-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: #111;
+  transition: opacity 500ms ease;
+}
+.tbm-bts-card .label {
+  position: absolute;
+  left: 14px; bottom: 12px; right: 14px;
+  font-family: 'Caveat', cursive;
+  font-size: 17px; font-weight: 700;
+  color: #2a2a2a;
+  letter-spacing: 0.01em;
+  display: flex; align-items: center; gap: 8px;
+  white-space: nowrap; overflow: hidden;
+}
+.tbm-bts-card .label::before {
+  content: ""; flex-shrink: 0;
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--tbm-impact-yellow);
+}
+.tbm-bts-card.is-fading img { opacity: 0; }
+
+/* 6 scattered slots — each with its own resting rotation + position + z-index */
+.tbm-bts-card:nth-child(1) { top: 2%;  left: 2%;  transform: rotate(-7deg); z-index: 3; }
+.tbm-bts-card:nth-child(2) { top: 6%;  left: 30%; transform: rotate(4deg);  z-index: 5; }
+.tbm-bts-card:nth-child(3) { top: 0;   left: 58%; transform: rotate(-3deg); z-index: 4; }
+.tbm-bts-card:nth-child(4) { top: 48%; left: 10%; transform: rotate(6deg);  z-index: 2; }
+.tbm-bts-card:nth-child(5) { top: 52%; left: 38%; transform: rotate(-9deg); z-index: 6; }
+.tbm-bts-card:nth-child(6) { top: 44%; left: 66%; transform: rotate(2deg);  z-index: 1; }
+
+.tbm-bts-card:hover {
+  transform: rotate(0deg) translateZ(80px) scale(1.05) !important;
+  z-index: 30 !important;
+  box-shadow:
+    0 60px 90px -20px rgba(0,0,0,0.85),
+    0 0 0 1.5px rgba(255,213,0,0.4);
+}
+@media (max-width: 980px) {
+  .tbm-bts-stack { height: 720px; transform: scale(0.9); transform-origin: top left; }
+}
+
+/* ============ SECTION 4: PORTFOLIO TEASE ============ */
+.tbm-portfolio {
+  background: var(--tbm-master-black);
+  padding: var(--space-10) 0 var(--space-9);
+  position: relative;
+  z-index: 15;          /* > section-rule's z:12 so lifted tiles render above the divider strip */
+  overflow-x: clip; overflow-y: visible;
+}
+.tbm-portfolio__head {
+  max-width: 1280px; margin: 0 auto var(--space-8);
+  padding: 0 clamp(28px,4vw,56px);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: var(--space-6); flex-wrap: wrap;
+}
+.tbm-portfolio__eyebrow {
+  font-family: var(--font-mono); font-weight: 500; font-size: var(--fs-micro);
+  letter-spacing: 0.32em; color: var(--tbm-impact-yellow);
+  text-transform: uppercase; margin-bottom: var(--space-5);
+}
+.tbm-portfolio__h2 {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(72px,10vw,160px); line-height: 0.88;
+  text-transform: uppercase; letter-spacing: -0.02em;
+  padding: 0.08em 0.06em; margin: 0; text-wrap: balance;
+}
+.tbm-portfolio__h2 .crossed { color: var(--tbm-ink-500); position: relative; }
+.tbm-portfolio__h2 .crossed::after {
+  content: ""; position: absolute; left: -2%; right: -2%; top: 52%;
+  height: 11px; background: var(--tbm-signal-orange); transform: rotate(-3deg);
+}
+.tbm-portfolio__sub { font-family: var(--font-body); font-size: clamp(15px,1vw,17px); color: var(--tbm-ink-300); max-width: 380px; line-height: 1.55; margin: 0; }
+.tbm-portfolio__cta {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--tbm-impact-yellow);
+  text-decoration: none; border-bottom: 1px solid var(--tbm-impact-yellow); padding-bottom: 4px;
+}
+.tbm-portfolio__track-wrap {
+  overflow-x: auto; overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  /* Generous top breathing room — translateY(-22) + scale(1.10) can extend ~50px+ above the original top,
+     plus a margin for rotation diagonal. 100px guarantees no clip across all tile sizes. */
+  padding: 100px clamp(40px,5vw,72px) var(--space-7);
+  margin-top: -40px;          /* counter the extra padding visually so layout below stays compact */
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-x;
+  position: relative; z-index: 1;
+}
+.tbm-portfolio__track-wrap.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.tbm-portfolio__track-wrap.is-dragging * { pointer-events: none !important; }
+.tbm-portfolio__track-wrap::-webkit-scrollbar { display: none; }
+.tbm-portfolio__track { display: flex; gap: var(--space-6); width: max-content; }
+.tbm-portfolio__tile {
+  /* Button reset — tiles are <button>s now, not <a>s, to bypass native link nav issues */
+  appearance: none; font: inherit; color: inherit; text-align: left; cursor: pointer;
+  flex: 0 0 min(640px,72vw); height: 72vh; min-height: 540px;
+  position: relative; overflow: hidden;
+  scroll-snap-align: start; background: var(--tbm-ink-800);
+  border: 1px solid rgba(255,255,255,0.08);
+  transform-origin: center;
+  /* Smooth choreographed transitions across multiple properties */
+  transition:
+    transform 520ms cubic-bezier(.2,.85,.25,1),
+    border-color 320ms var(--ease-out),
+    box-shadow 520ms var(--ease-out),
+    opacity 520ms var(--ease-out),
+    filter 520ms var(--ease-out);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+  text-decoration: none; color: inherit;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
+.tbm-portfolio__tile * { -webkit-user-drag: none; user-select: none; }
+
+/* Three tilt angles cycled across the track so the lift feels intentional, not uniform */
+.tbm-portfolio__tile:nth-child(3n+1):hover { transform: scale(1.10) translateY(-22px) rotate(-2.5deg); }
+.tbm-portfolio__tile:nth-child(3n+2):hover { transform: scale(1.10) translateY(-22px) rotate( 2deg); }
+.tbm-portfolio__tile:nth-child(3n+3):hover { transform: scale(1.10) translateY(-22px) rotate(-1.5deg); }
+.tbm-portfolio__tile:hover {
+  z-index: 10;
+  border-color: var(--tbm-impact-yellow);
+  box-shadow:
+    0 50px 80px -18px rgba(0,0,0,0.9),
+    0 0 0 2px var(--tbm-impact-yellow),
+    0 0 60px rgba(255,213,0,0.15);
+}
+
+/* When any tile in the track is hovered, recede the others so the focus is unambiguous */
+.tbm-portfolio__track:has(.tbm-portfolio__tile:hover) .tbm-portfolio__tile:not(:hover) {
+  opacity: 0.5;
+  filter: grayscale(0.45) brightness(0.85);
+  transform: scale(0.97);
+}
+
+.tbm-portfolio__tile .poster {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  filter: grayscale(0.55) brightness(0.7) contrast(1.05);
+  transition: filter 520ms var(--ease-out), transform 8s var(--ease-out);
+}
+.tbm-portfolio__tile:hover .poster { filter: grayscale(0) brightness(1) contrast(1.1) saturate(1.1); transform: scale(1.08); }
+.tbm-portfolio__tile .vignette {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,rgba(11,11,11,0) 0%,rgba(11,11,11,0.15) 50%,rgba(11,11,11,0.92) 100%);
+}
+.tbm-portfolio__tile .num {
+  position: absolute; top: 24px; left: 28px; font-family: var(--font-mono);
+  font-size: 12px; letter-spacing: 0.3em; color: var(--tbm-impact-yellow); z-index: 3;
+}
+.tbm-portfolio__tile .tag {
+  position: absolute; top: 24px; right: 28px; font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.25em; color: var(--tbm-ink-300); text-transform: uppercase; z-index: 3;
+}
+.tbm-portfolio__tile .meta {
+  position: absolute; left: 28px; right: 28px; bottom: 28px; z-index: 3;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.tbm-portfolio__tile .title {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  text-transform: uppercase; font-size: clamp(36px,4vw,64px); line-height: 0.9;
+  letter-spacing: -0.015em; color: var(--tbm-script-white);
+  padding: 0.08em 0.06em; margin: -0.08em -0.06em;
+}
+.tbm-portfolio__tile .sub {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em;
+  color: var(--tbm-ink-300); text-transform: uppercase;
+  display: flex; gap: 18px; align-items: center;
+}
+.tbm-portfolio__tile .sub .arr { color: var(--tbm-signal-orange); font-size: 14px; }
+.tbm-portfolio__hint {
+  max-width: 1280px; margin: 0 auto;
+  padding: 0 clamp(28px,4vw,56px);
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.3em; color: var(--tbm-ink-500);
+  text-transform: uppercase;
+}
+.tbm-portfolio__hint .cur { color: var(--tbm-impact-yellow); }
+
+.poster-cat   { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/cat.jpg'); background-color: #1a1410; }
+.poster-srh   { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/scottishrite.jpg'); background-color: #0c1428; }
+.poster-gq    { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/gq.jpg'); background-color: #180c1c; }
+.poster-arc   { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/arcbest.jpg'); background-color: #0c1c14; }
+.poster-psy   { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/psychica.jpg'); background-color: #1a0c1a; }
+.poster-co    { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/circle-o.jpg'); background-color: #1a1610; }
+.poster-beef  { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/beef.jpg'); background-color: #1f140c; }
+.poster-rah   { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/rahman.jpg'); background-color: #14181c; }
+.poster-angel { background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/work/angel-reyes.jpg'); background-color: #1c1410; }
+
+/* ============ WORK MODAL — Vimeo player overlay with optional carousel ============ */
+.tbm-work-modal {
+  /* Reset native dialog defaults so we own the styling. Use viewport units explicitly —
+     `width/height: 100%` was computing to 0px in some top-layer scenarios, making the
+     modal invisible even though it was technically open. */
+  border: 0; padding: 0; background: transparent; color: inherit;
+  width: 100vw; height: 100vh; max-width: none; max-height: none;
+  margin: 0; top: 0; left: 0; right: auto; bottom: auto;
+  overflow: hidden;
+}
+.tbm-work-modal::backdrop {
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(10px) saturate(0.7);
+}
+.tbm-work-modal__inner {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: clamp(60px, 6vw, 96px) clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px);
+  gap: clamp(18px, 2.5vw, 32px);
+}
+.tbm-work-modal__close {
+  position: absolute; top: 28px; right: 28px;
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%;
+  color: var(--tbm-script-white);
+  font-size: 24px; line-height: 1;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-snap);
+}
+.tbm-work-modal__close:hover {
+  background: var(--tbm-impact-yellow);
+  color: var(--tbm-master-black);
+  border-color: var(--tbm-impact-yellow);
+  transform: rotate(90deg);
+}
+.tbm-work-modal__video {
+  position: relative;
+  width: min(1280px, 92vw);
+  aspect-ratio: 16/9;
+  background: #000;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05);
+}
+.tbm-work-modal__iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.tbm-work-modal__controls {
+  display: none;            /* shown only when .has-multi */
+  align-items: center; gap: 20px;
+}
+.tbm-work-modal__controls.has-multi { display: inline-flex; }
+.tbm-work-modal__prev,
+.tbm-work-modal__next {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: var(--tbm-script-white);
+  font-size: 16px; cursor: pointer;
+  font-family: var(--font-body);
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.tbm-work-modal__prev:hover,
+.tbm-work-modal__next:hover {
+  background: var(--tbm-impact-yellow);
+  color: var(--tbm-master-black);
+  border-color: var(--tbm-impact-yellow);
+}
+.tbm-work-modal__counter {
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--tbm-ink-300);
+  text-transform: uppercase;
+  min-width: 80px; text-align: center;
+}
+.tbm-work-modal__meta {
+  display: flex; align-items: center; gap: clamp(20px, 3vw, 40px);
+  flex-wrap: wrap; justify-content: center;
+}
+.tbm-work-modal__title {
+  font-family: var(--font-display); font-style: italic; font-weight: 900;
+  font-size: clamp(20px, 2vw, 28px);
+  text-transform: uppercase;
+  color: var(--tbm-script-white);
+  margin: 0; letter-spacing: -0.01em;
+}
+.tbm-work-modal__cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--tbm-impact-yellow); color: var(--tbm-master-black);
+  font-family: var(--font-display); font-style: italic; font-weight: 900;
+  font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em;
+  padding: 12px 20px 9px;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 0 var(--tbm-master-black);
+  transition: transform var(--dur-fast) var(--ease-snap), box-shadow var(--dur-fast) var(--ease-snap);
+}
+.tbm-work-modal__cta:hover {
+  transform: translate(-2px,-2px);
+  box-shadow: 6px 6px 0 0 var(--tbm-master-black);
+}
+.tbm-work-modal__cta .arr { transition: transform var(--dur-fast) var(--ease-out); }
+.tbm-work-modal__cta:hover .arr { transform: translateX(4px); }
+
+@media (max-width: 720px) {
+  .tbm-work-modal__close { top: 16px; right: 16px; width: 40px; height: 40px; }
+  .tbm-work-modal__meta { flex-direction: column; gap: 16px; }
+}
+
+/* ============ SECTION 5: WHAT WE OFFER ============ */
+.tbm-offer { background: var(--tbm-impact-yellow); padding: var(--space-10) clamp(28px,4vw,56px); position: relative; overflow: hidden; }
+/* Yellow-with-black-X brand divider lives on a behind-content layer */
+.tbm-offer__bg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/divider-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.tbm-offer__head { max-width: 1280px; margin: 0 auto var(--space-8); display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; position: relative; z-index: 1; }
+.tbm-offer__h2 {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: var(--fs-h2); line-height: 0.9;
+  text-transform: uppercase; letter-spacing: -0.015em;
+  padding: 0.08em 0.06em; margin: 0 0 var(--space-5);
+  text-wrap: balance; max-width: 900px;
+  color: var(--tbm-master-black);
+}
+.tbm-offer__h2 .y { background: var(--tbm-master-black); color: var(--tbm-impact-yellow); padding: 0 0.12em; }
+.tbm-offer__sub { font-family: var(--font-body); font-size: clamp(15px,1.05vw,18px); color: var(--tbm-master-black); max-width: 700px; line-height: 1.55; margin: 0; opacity: 0.85; }
+/* Eyebrow + view-all CTA contrast on yellow */
+.tbm-offer .tbm-portfolio__eyebrow { color: var(--tbm-master-black); }
+.tbm-offer .tbm-portfolio__cta { color: var(--tbm-master-black); border-bottom-color: var(--tbm-master-black); }
+.tbm-offer__cards {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5);
+  position: relative; z-index: 1;
+}
+@media (max-width: 1024px) { .tbm-offer__cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .tbm-offer__cards { grid-template-columns: 1fr; } }
+.tbm-offer__card {
+  position: relative;
+  /* Same yellow-fade gradient that used to be only on the .is-star (Ideation) card — now on every card */
+  background: linear-gradient(180deg, rgba(255,213,0,0.06) 0%, var(--tbm-ink-800) 70%);
+  border: 0; /* yellow + white borders gone; hand-drawn outline lives on the ::after layer */
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  text-decoration: none; color: inherit;
+  min-height: 360px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  /* Transform driven by --magnet-x/y CSS vars (set per-frame by the magnet JS). Free-floating, no snap back. */
+  transform: translate3d(var(--magnet-x, 0px), var(--magnet-y, 0px), 0);
+  transition: background var(--dur-base) var(--ease-out);
+  will-change: transform;
+}
+.tbm-offer__card:hover {
+  background: linear-gradient(180deg, rgba(255,213,0,0.10) 0%, var(--tbm-ink-700) 70%);
+}
+/* Hand-drawn rectangle outline — inline SVG, displaced by an SVG turbulence filter, stretched to fill the card */
+.tbm-offer__card::after {
+  content: ""; position: absolute; inset: -4px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'><defs><filter id='r' x='-3%25' y='-3%25' width='106%25' height='106%25'><feTurbulence type='fractalNoise' baseFrequency='0.045' numOctaves='2' seed='7'/><feDisplacementMap in='SourceGraphic' scale='3.8'/></filter></defs><g filter='url(%23r)' fill='none' stroke='%23faf9f9'><rect x='3' y='3' width='194' height='194' stroke-width='1.4' opacity='0.5'/><rect x='5' y='5' width='190' height='190' stroke-width='1' opacity='0.32'/></g></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+}
+/* Star icon stays the marker for the lead card */
+.tbm-offer__card.is-star::before {
+  content: "★"; position: absolute; top: 18px; right: 18px;
+  font-size: 22px; color: var(--tbm-impact-yellow);
+  font-family: var(--font-display); font-style: italic;
+  z-index: 2;
+}
+.tbm-offer__card .num {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.3em;
+  color: var(--tbm-ink-400); text-transform: uppercase;
+}
+.tbm-offer__card .label {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(26px,2.2vw,36px); line-height: 1; letter-spacing: -0.005em;
+  text-transform: uppercase; color: var(--tbm-script-white);
+  margin: var(--space-5) 0 var(--space-4);
+  padding: 0.08em 0.06em;
+}
+.tbm-offer__card.is-star .label { color: var(--tbm-impact-yellow); }
+.tbm-offer__card .tagline { font-family: var(--font-body); font-size: 14px; color: var(--tbm-ink-200); line-height: 1.55; }
+.tbm-offer__card .arr {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--tbm-signal-orange);
+  margin-top: var(--space-5);
+}
+
+/* ============ SECTION 6: ALWAYS-ON CONTENT ============ */
+.tbm-aoc { background: var(--tbm-master-black); padding: var(--space-10) clamp(28px,4vw,56px); position: relative; overflow: hidden; }
+.tbm-aoc__band {
+  position: absolute; left: 0; right: 0; top: 0;
+  height: 10px;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--tbm-impact-yellow) 0 12px,
+    var(--tbm-master-black) 12px 24px
+  );
+}
+.tbm-aoc__inner {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--space-9);
+  align-items: center; position: relative;
+}
+@media (max-width: 980px) { .tbm-aoc__inner { grid-template-columns: 1fr; } }
+.tbm-aoc__copy { position: relative; }
+.tbm-aoc__h2 {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: var(--fs-h2); line-height: 0.9; letter-spacing: -0.015em;
+  text-transform: uppercase; padding: 0.08em 0.06em;
+  margin: 0 0 var(--space-6);
+}
+.tbm-aoc__h2 .y { color: var(--tbm-impact-yellow); }
+.tbm-aoc__body { font-family: var(--font-body); font-size: clamp(15px,1.05vw,17px); color: var(--tbm-ink-200); line-height: 1.6; margin: 0 0 var(--space-6); max-width: 540px; }
+/* 3D pile of devices — click any to bring it forward */
+.tbm-aoc__devices {
+  position: relative;
+  height: 620px;
+  perspective: 1800px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+.tbm-aoc__device {
+  position: absolute;
+  appearance: none; border: 0; padding: 0;
+  background:
+    linear-gradient(155deg, #2a2a2a 0%, #0a0a0a 100%);
+  color: inherit; cursor: pointer;
+  transform-style: preserve-3d; transform-origin: 50% 50%;
+  transition:
+    transform 760ms cubic-bezier(.2,.85,.25,1),
+    opacity 600ms ease,
+    filter 600ms ease,
+    box-shadow 600ms ease;
+  box-shadow:
+    0 30px 60px -15px rgba(0,0,0,0.7),
+    0 0 0 1.5px rgba(255,255,255,0.05) inset,
+    0 1px 0 rgba(255,255,255,0.09) inset,
+    0 -1px 0 rgba(0,0,0,0.45) inset;
+  overflow: hidden;
+}
+.tbm-aoc__device:focus-visible { outline: 2px solid var(--tbm-impact-yellow); outline-offset: 6px; }
+
+/* PHONE — iPhone-style chrome. Outer 145x300 → screen 129x284 (~9:19, real-phone tall).
+   Video iframe fills the TOP at 9:16; the bottom strip is the Instagram nav bar.
+   Phones are purely decorative — no click, no hover transform, cursor default. */
+.tbm-aoc__device--phone {
+  width: 145px; height: 300px;
+  border-radius: 28px;
+  cursor: default;
+}
+.tbm-aoc__device--phone::before {
+  /* Dynamic Island — small pill at top of screen */
+  content: ""; position: absolute;
+  top: 7px; left: 50%; transform: translateX(-50%);
+  width: 38px; height: 10px;
+  background: #050505;
+  border-radius: 6px;
+  z-index: 4;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset;
+}
+.tbm-aoc__device--phone::after {
+  /* Home indicator */
+  content: ""; position: absolute;
+  bottom: 4px; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 3px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 3px;
+  z-index: 4;
+}
+
+/* IPAD — landscape tablet. Outer 400x234 → screen 380x214 = exactly 16:9 for the landscape video (no side bars).
+   Base size matches the previous .is-front (scaled-up) appearance. Centered in the pile, in front in 3D. */
+.tbm-aoc__device--ipad {
+  width: 400px; height: 234px;
+  border-radius: 16px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) translateZ(110px);
+  z-index: 5;
+}
+.tbm-aoc__device--ipad::before {
+  /* Landscape front camera on the left edge */
+  content: ""; position: absolute;
+  top: 50%; left: 7px; transform: translateY(-50%);
+  width: 4px; height: 4px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  z-index: 4;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* PHONE POSITIONS — 4 corners of the pile so each phone is clearly visible.
+   iPad sits in the middle and overlaps each phone's inner edge. Phones recede in 3D depth. */
+.tbm-aoc__device--phone.tbm-aoc__device--p1 { left:  -2%; top:    10px; transform: rotateY(-14deg) rotateZ(4deg)  translateZ(-30px); z-index: 3; }
+.tbm-aoc__device--phone.tbm-aoc__device--p2 { left:  -2%; bottom: 10px; transform: rotateY(-14deg) rotateZ(-4deg) translateZ(-30px); z-index: 3; }
+.tbm-aoc__device--phone.tbm-aoc__device--p3 { right: -2%; top:    10px; transform: rotateY(14deg)  rotateZ(-4deg) translateZ(-30px); z-index: 3; }
+.tbm-aoc__device--phone.tbm-aoc__device--p4 { right: -2%; bottom: 10px; transform: rotateY(14deg)  rotateZ(4deg)  translateZ(-30px); z-index: 3; }
+
+/* SCREEN — common */
+.tbm-aoc__device-screen {
+  position: absolute;
+  background-color: #0a0a0a;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.tbm-aoc__device--phone .tbm-aoc__device-screen {
+  inset: 8px;
+  border-radius: 16px;
+  background: #000;
+}
+.tbm-aoc__device--ipad .tbm-aoc__device-screen {
+  inset: 10px;
+  border-radius: 8px;
+  background: #000;
+}
+
+/* Vimeo iframe fills the device screen (sizes match video aspect so no letterbox) */
+.tbm-aoc__device-iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: 0; background: #000;
+  display: block;
+  pointer-events: none; /* clicks pass through to the device button */
+}
+/* On phones the iframe sits at the TOP of the screen at the 9:16 video aspect.
+   The space below is the Instagram bottom-nav (rendered as .tbm-aoc__phone-menubar). */
+.tbm-aoc__device--phone .tbm-aoc__device-iframe {
+  inset: auto;
+  top: 0; left: 0; right: 0; bottom: auto;
+  width: 100%; height: auto;
+  aspect-ratio: 9 / 16;
+}
+
+/* Instagram bottom nav strip — only on the phones */
+.tbm-aoc__phone-menubar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 32px;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: space-around;
+  padding: 0 8px 6px;
+  z-index: 4;
+  color: #fff;
+}
+.tbm-aoc__phone-menubar svg {
+  width: 14px; height: 14px;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.tbm-aoc__phone-menubar .profile {
+  display: inline-block; width: 14px; height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--tbm-impact-yellow), var(--tbm-signal-orange));
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+/* === Instagram Reels-style overlay on each phone screen === */
+.tbm-aoc__ig-overlay {
+  position: absolute; inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  color: #fff;
+}
+/* Per user request: keep only the progress bar (top) + action icons (right). Hide all text bits. */
+.tbm-aoc__ig-handle,
+.tbm-aoc__ig-caption,
+.tbm-aoc__ig-actions .count { display: none; }
+.tbm-aoc__ig-progress {
+  position: absolute; top: 5px; left: 8px; right: 8px;
+  height: 2px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.tbm-aoc__ig-progress::after {
+  content: ""; display: block; height: 100%;
+  width: 0;
+  background: #fff;
+  animation: tbm-ig-progress 9s linear infinite;
+}
+@keyframes tbm-ig-progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+.tbm-aoc__ig-handle { display: none; }
+.tbm-aoc__ig-handle-legacy {
+  position: absolute; top: 14px; left: 10px;
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 9px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.tbm-aoc__ig-handle .av {
+  display: inline-block; width: 18px; height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--tbm-impact-yellow), var(--tbm-signal-orange));
+  border: 1.5px solid rgba(255,255,255,0.9);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+.tbm-aoc__ig-handle .name { font-weight: 700; }
+.tbm-aoc__ig-handle .time { opacity: 0.75; font-weight: 400; }
+.tbm-aoc__ig-actions {
+  position: absolute; right: 6px; bottom: 46px; /* sits above the 32px IG bottom-nav */
+  display: flex; flex-direction: column; gap: 14px; align-items: center;
+}
+.tbm-aoc__ig-actions svg {
+  width: 18px; height: 18px;
+  fill: none; stroke: currentColor; stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+}
+.tbm-aoc__ig-actions .count {
+  font-family: var(--font-mono); font-size: 8px; font-weight: 700;
+  margin-top: -8px;
+  letter-spacing: 0.04em;
+}
+.tbm-aoc__ig-caption {
+  position: absolute; bottom: 14px; left: 10px; right: 36px;
+  font-family: var(--font-body); font-size: 9px;
+  line-height: 1.35;
+}
+.tbm-aoc__ig-caption strong { font-weight: 700; margin-right: 3px; }
+
+/* Browser chrome overlay (laptop + desktop) */
+.tbm-aoc__device-chrome {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 22px;
+  background: rgba(12,12,12,0.94);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center;
+  padding: 0 10px;
+  z-index: 3;
+}
+.tbm-aoc__device-chrome .dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
+.tbm-aoc__device-chrome .dot.r { background: #ff5f57; }
+.tbm-aoc__device-chrome .dot.y { background: #febc2e; }
+.tbm-aoc__device-chrome .dot.g { background: #28c840; }
+.tbm-aoc__device-chrome .url {
+  flex: 1; margin: 0 10px;
+  font-family: var(--font-mono); font-size: 7px;
+  color: var(--tbm-ink-300); letter-spacing: 0.05em;
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 3px 8px;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+/* Reel overlay (phone) */
+.tbm-aoc__device-reel {
+  position: absolute; inset: 0;
+  padding: 38px 12px 28px;
+  display: flex; flex-direction: column;
+  z-index: 2;
+  pointer-events: none;
+}
+.tbm-aoc__device-reel .progress { display: flex; gap: 3px; }
+.tbm-aoc__device-reel .progress span {
+  flex: 1; height: 2px;
+  background: rgba(255,255,255,0.22);
+  border-radius: 2px;
+}
+.tbm-aoc__device-reel .progress span.is-active {
+  background: var(--tbm-script-white);
+  box-shadow: 0 0 6px rgba(255,255,255,0.45);
+}
+.tbm-aoc__device-reel .handle {
+  margin-top: auto;
+  font-family: var(--font-mono); font-size: 8px;
+  color: rgba(255,255,255,0.92); letter-spacing: 0.05em;
+}
+.tbm-aoc__device-reel .actions {
+  position: absolute; right: 8px; bottom: 44px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.tbm-aoc__device-reel .actions i {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(4px);
+  display: block;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+/* IG-style post overlay (tablet) */
+.tbm-aoc__device-post {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  padding: 24px 14px 20px;
+  z-index: 2;
+  pointer-events: none;
+}
+.tbm-aoc__device-post .top {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: auto;
+}
+.tbm-aoc__device-post .avatar {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--tbm-impact-yellow);
+  border: 1.5px solid #fff;
+}
+.tbm-aoc__device-post .handle {
+  font-family: var(--font-mono); font-size: 8px;
+  color: rgba(255,255,255,0.95); letter-spacing: 0.05em;
+}
+.tbm-aoc__device-post .dots {
+  margin-top: auto;
+  display: flex; gap: 4px; justify-content: center;
+}
+.tbm-aoc__device-post .dots span {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+}
+.tbm-aoc__device-post .dots span.is-active { background: var(--tbm-script-white); }
+
+/* Sticker placed on device screens */
+.tbm-aoc__device-sticker {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45));
+  z-index: 2;
+}
+.tbm-aoc__device--phone .tbm-aoc__device-sticker {
+  top: 38%; left: 50%;
+  width: 80px; transform: translate(-50%, -50%) rotate(-6deg);
+}
+.tbm-aoc__device--tablet .tbm-aoc__device-sticker {
+  top: 44%; left: 50%;
+  width: 110px; transform: translate(-50%, -50%) rotate(8deg);
+}
+.tbm-aoc__device--laptop .tbm-aoc__device-sticker {
+  top: 50%; left: 22%;
+  width: 95px; transform: translate(-50%, -50%) rotate(-4deg);
+}
+.tbm-aoc__device--desktop .tbm-aoc__device-sticker {
+  top: 52%; right: 14%;
+  width: 130px; transform: rotate(4deg);
+}
+
+/* Caption tag floating beside each device — only visible when featured */
+.tbm-aoc__device-tag {
+  position: absolute; top: -28px; left: 0;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.28em;
+  color: var(--tbm-impact-yellow); text-transform: uppercase;
+  background: rgba(0,0,0,0.6); padding: 4px 10px;
+  border: 1px solid rgba(255,213,0,0.4);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity 360ms ease 120ms, transform 360ms ease 120ms;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.tbm-aoc__device-tag::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--tbm-impact-yellow);
+}
+.tbm-aoc__device.is-front .tbm-aoc__device-tag { opacity: 1; transform: translateY(0); }
+
+/* Featured state — bring to front, face camera */
+.tbm-aoc__devices.has-front .tbm-aoc__device:not(.is-front) {
+  opacity: 0.4;
+  filter: brightness(0.6) saturate(0.55);
+}
+.tbm-aoc__device.is-front {
+  z-index: 10;
+  opacity: 1;
+  filter: none;
+  box-shadow:
+    0 80px 140px -25px rgba(0,0,0,0.92),
+    0 0 0 1.5px rgba(255,213,0,0.55) inset,
+    0 1px 0 rgba(255,255,255,0.14) inset,
+    0 0 80px rgba(255,213,0,0.2);
+}
+/* iPad scales up modestly once the user has tapped to play. Phones are STATIC — no .is-front, no hover transform. */
+.tbm-aoc__device--ipad.is-playing,
+.tbm-aoc__device--ipad.is-paused  { transform: translate(-50%, -50%) translateZ(180px) scale(1.10); cursor: pointer; }
+.tbm-aoc__device--ipad:hover      { transform: translate(-50%, -50%) translateZ(140px) scale(1.03); }
+.tbm-aoc__device--ipad.is-playing:hover,
+.tbm-aoc__device--ipad.is-paused:hover  { transform: translate(-50%, -50%) translateZ(180px) scale(1.10); }
+
+/* Poster covering the iPad until user clicks play. Minimal SVG play button centered on top. */
+.tbm-aoc__ipad-poster {
+  position: absolute; inset: 0; z-index: 6;
+  background: #000 center/cover no-repeat;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.35) 0%, transparent 35%, transparent 65%, rgba(0,0,0,0.35) 100%),
+    url('https://i.vimeocdn.com/video/2148117876-afcb4661635358e12c6baea046874cd6e343dd96c056d2cfb839b02a14d34c8e-d_640x360?region=us');
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 240ms ease;
+}
+.tbm-aoc__device--ipad.is-playing .tbm-aoc__ipad-poster { opacity: 0; pointer-events: none; }
+/* Paused state — show the play button again, but drop the thumbnail bg so the paused video frame shows through with a subtle dim */
+.tbm-aoc__device--ipad.is-paused .tbm-aoc__ipad-poster {
+  opacity: 1; pointer-events: none;
+  background-image: none;
+  background-color: rgba(0,0,0,0.4);
+}
+.tbm-aoc__ipad-play {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px;
+  color: #fff;
+  transition: transform 220ms var(--ease-snap);
+  pointer-events: none; /* parent button handles the click */
+}
+.tbm-aoc__ipad-play svg {
+  width: 100%; height: 100%;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.55));
+}
+.tbm-aoc__device--ipad:hover .tbm-aoc__ipad-play { transform: scale(1.08); }
+
+/* Click hint */
+.tbm-aoc__hint {
+  position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em;
+  color: var(--tbm-ink-400); text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.tbm-aoc__hint .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--tbm-impact-yellow);
+  animation: tbm-pulse 1.6s ease-in-out infinite;
+}
+@keyframes tbm-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 980px) {
+  .tbm-aoc__devices { height: 420px; transform: scale(0.78); transform-origin: top center; }
+}
+
+/* ============ SECTION 7: CASE STUDIES ============ */
+/* Section padding is vertical-only so the canvas can span the FULL width.
+   Head (eyebrow + h2 + view-all CTA) gets its own horizontal padding via __inner.
+   overflow:visible at the section level so the pillars sticker can spill UP into here. */
+.tbm-cases { background: var(--tbm-master-black); padding: var(--space-10) 0; position: relative; overflow: visible; }
+.tbm-cases__inner { max-width: 1280px; margin: 0 auto var(--space-8); padding: 0 clamp(28px,4vw,56px); position: relative; }
+.tbm-cases__head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; }
+.tbm-cases__h2 {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: var(--fs-h2); line-height: 0.9; letter-spacing: -0.015em;
+  text-transform: uppercase; padding: 0.08em 0.06em;
+  margin: 0 0 var(--space-5); text-wrap: balance; max-width: 900px;
+}
+.tbm-cases__h2 .o { color: var(--tbm-signal-orange); }
+/* === STUDIO FLOOR === Click-to-drag canvas for Case Studies */
+.tbm-cases__canvas {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(255,213,0,0.04) 0%, transparent 60%),
+    repeating-linear-gradient(0deg,  rgba(255,255,255,0.04) 0 1px, transparent 1px 56px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 56px),
+    var(--tbm-master-black);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.tbm-cases__canvas.dragging { cursor: grabbing; }
+.tbm-cases__canvas.dragging * { pointer-events: none !important; }
+
+.tbm-cases__world {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 2400px; height: 1400px;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* Cards positioned absolutely in the world; width fixed so they don't stretch */
+.tbm-cases__world .tbm-case {
+  position: absolute;
+  width: 360px;
+  min-height: 360px;
+}
+.tbm-cases__world .tbm-case * { -webkit-user-drag: none; }
+
+/* Decorative chips scattered around the world to make dragging feel rewarding */
+.tbm-cases__chip {
+  position: absolute;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--tbm-ink-300);
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  white-space: nowrap;
+}
+.tbm-cases__chip--accent { color: var(--tbm-impact-yellow); border-color: rgba(255,213,0,0.35); }
+.tbm-cases__quote {
+  position: absolute;
+  font-family: var(--font-display); font-style: italic; font-weight: 900;
+  font-size: 22px; line-height: 1.1;
+  color: var(--tbm-script-white); text-transform: uppercase;
+  max-width: 320px;
+  letter-spacing: -0.01em;
+  opacity: 0.55;
+}
+
+/* === Studio-floor card variants — populate the world so dragging is rewarding === */
+.tbm-cases__note {
+  position: absolute;
+  width: 240px; padding: 18px 18px 16px;
+  background: var(--tbm-ink-800);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 18px 40px -12px rgba(0,0,0,0.55);
+  color: var(--tbm-script-white);
+}
+.tbm-cases__note .tag {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.3em;
+  color: var(--tbm-impact-yellow); text-transform: uppercase;
+  display: block; margin-bottom: 10px;
+}
+.tbm-cases__note .body {
+  font-family: var(--font-display); font-style: italic; font-weight: 900;
+  font-size: 18px; line-height: 1.18; letter-spacing: -0.005em;
+  text-transform: uppercase;
+}
+.tbm-cases__note.is-sticky {
+  background: var(--tbm-impact-yellow);
+  border-color: rgba(0,0,0,0.12);
+  color: var(--tbm-master-black);
+  transform: rotate(-2deg);
+}
+.tbm-cases__note.is-sticky .tag { color: var(--tbm-master-black); opacity: 0.6; }
+
+.tbm-cases__stat {
+  position: absolute;
+  width: 220px; padding: 18px 18px 16px;
+  background: var(--tbm-master-black);
+  border: 1px solid rgba(255,213,0,0.4);
+  color: var(--tbm-script-white);
+}
+.tbm-cases__stat .n {
+  font-family: var(--font-display); font-style: italic; font-weight: 900;
+  font-size: 56px; line-height: 0.9; letter-spacing: -0.025em;
+  color: var(--tbm-impact-yellow);
+  padding: 0.06em 0;
+  display: block;
+}
+.tbm-cases__stat .lbl {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em;
+  color: var(--tbm-ink-300); text-transform: uppercase;
+  margin-top: 10px; display: block;
+}
+
+.tbm-cases__receipt {
+  position: absolute;
+  width: 240px; padding: 14px 16px;
+  background: #f5f3ec;
+  color: var(--tbm-master-black);
+  font-family: var(--font-mono); font-size: 11px;
+  line-height: 1.5; letter-spacing: 0.02em;
+  box-shadow: 0 14px 32px -10px rgba(0,0,0,0.4);
+}
+.tbm-cases__receipt .head {
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em;
+  border-bottom: 1px dashed rgba(0,0,0,0.4);
+  padding-bottom: 6px; margin-bottom: 8px; font-size: 10px;
+}
+.tbm-cases__receipt ul { list-style: none; margin: 0; padding: 0; }
+.tbm-cases__receipt li { display: flex; justify-content: space-between; }
+.tbm-cases__receipt .total {
+  border-top: 1px dashed rgba(0,0,0,0.4);
+  margin-top: 8px; padding-top: 6px;
+  font-weight: 700; font-size: 13px;
+  display: flex; justify-content: space-between;
+}
+
+.tbm-cases__logo-strip {
+  position: absolute;
+  display: flex; align-items: center; gap: 18px;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.02);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.tbm-cases__logo-strip img {
+  height: 28px; width: auto; opacity: 0.5;
+  filter: grayscale(1) brightness(1.8);
+}
+
+.tbm-cases__tag {
+  position: absolute;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--tbm-impact-yellow);
+  padding: 8px 14px;
+  background: var(--tbm-master-black);
+  border: 2px solid var(--tbm-impact-yellow);
+  font-weight: 700;
+}
+
+/* Customer-review cards — 5-star Google-style review look */
+.tbm-cases__review {
+  position: absolute;
+  width: 300px; padding: 20px 22px 18px;
+  background: #fff;
+  color: var(--tbm-master-black);
+  box-shadow: 0 22px 44px -14px rgba(0,0,0,0.55);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.tbm-cases__review .stars {
+  font-family: var(--font-mono); font-size: 14px;
+  color: var(--tbm-impact-yellow);
+  letter-spacing: 0.18em; margin-bottom: 10px;
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.15);
+}
+.tbm-cases__review .text {
+  font-family: var(--font-body); font-size: 13px;
+  line-height: 1.5; margin: 0 0 14px;
+}
+.tbm-cases__review .author {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  opacity: 0.65;
+  border-top: 1px solid rgba(0,0,0,0.12);
+  padding-top: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.tbm-cases__review .author::before {
+  content: ""; display: inline-block;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--tbm-impact-yellow), var(--tbm-signal-orange));
+}
+
+/* Drag cue overlay — fades out on first drag */
+.tbm-cases__cue {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; pointer-events: none; z-index: 5;
+  background: radial-gradient(ellipse at center, rgba(11,11,11,0.55) 0%, transparent 70%);
+  transition: opacity 400ms ease-out;
+}
+.tbm-cases__cue.is-dismissed { opacity: 0; }
+.tbm-cases__cue-label {
+  font-family: var(--font-display); font-style: italic; font-weight: 900;
+  font-size: clamp(56px, 7vw, 112px);
+  letter-spacing: -0.02em; line-height: 0.95;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 6px 24px rgba(0,0,0,0.55);
+}
+.tbm-cases__cue-sub {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.32em;
+  color: rgba(255,255,255,0.75); text-transform: uppercase;
+}
+
+@media (max-width: 980px) { .tbm-cases__canvas { height: 560px; } }
+.tbm-case {
+  position: relative; padding: var(--space-6); min-height: 460px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-decoration: none; color: inherit;
+  transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+  overflow: hidden;
+}
+.tbm-case:hover { transform: translateY(-6px); }
+.tbm-case--metrics {
+  background: var(--tbm-stock-mahogany);
+  border-color: rgba(0,0,0,0.3);
+  box-shadow: 8px 8px 0 0 var(--tbm-ink-800);
+}
+.tbm-case--metrics:hover { box-shadow: 12px 12px 0 0 var(--tbm-impact-yellow); }
+.tbm-case--metrics .tbm-case__client { color: rgba(250,249,249,0.85); }
+.tbm-case--metrics .tbm-case__metric {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(72px,7vw,128px); line-height: 0.85; letter-spacing: -0.025em;
+  color: var(--tbm-impact-yellow); padding: 0.08em 0;
+}
+.tbm-case--metrics .tbm-case__metric-label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em;
+  color: rgba(250,249,249,0.9); text-transform: uppercase; margin-top: 4px;
+}
+.tbm-case--metrics .tbm-case__problem {
+  color: var(--tbm-script-white); font-size: 15px;
+  line-height: 1.5; margin-top: var(--space-5);
+}
+.tbm-case--metrics .tbm-case__cta { color: var(--tbm-impact-yellow); }
+.tbm-case--outcome {
+  background: var(--tbm-impact-yellow); color: var(--tbm-master-black);
+  border-color: rgba(0,0,0,0.15);
+  box-shadow: 8px 8px 0 0 var(--tbm-stock-mahogany);
+}
+.tbm-case--outcome:hover { box-shadow: 12px 12px 0 0 var(--tbm-master-black); }
+.tbm-case--outcome .tbm-case__client { color: var(--tbm-master-black); opacity: 0.75; }
+.tbm-case--outcome .tbm-case__quote-marks {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(56px,5vw,80px); line-height: 0.6;
+  color: var(--tbm-stock-mahogany);
+}
+.tbm-case--outcome .tbm-case__outcome {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(28px,2.6vw,40px); line-height: 0.95; letter-spacing: -0.015em;
+  text-transform: uppercase; padding: 0.08em 0;
+  color: var(--tbm-master-black); margin: var(--space-3) 0;
+}
+.tbm-case--outcome .tbm-case__problem {
+  color: var(--tbm-master-black); font-size: 15px;
+  line-height: 1.5; margin-top: var(--space-4); opacity: 0.85;
+}
+.tbm-case--outcome .tbm-case__cta { color: var(--tbm-stock-mahogany); }
+.tbm-case--scope {
+  background: var(--tbm-script-white); color: var(--tbm-master-black);
+  box-shadow: 8px 8px 0 0 var(--tbm-ink-800);
+}
+.tbm-case--scope:hover { box-shadow: 12px 12px 0 0 var(--tbm-signal-orange); }
+.tbm-case--scope .tbm-case__client { color: var(--tbm-master-black); opacity: 0.7; }
+.tbm-case--scope .tbm-case__scope-line {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(26px,2.4vw,38px); line-height: 1; letter-spacing: -0.01em;
+  text-transform: uppercase; margin: var(--space-3) 0 0;
+  color: var(--tbm-master-black);
+}
+.tbm-case--scope .tbm-case__problem {
+  color: var(--tbm-ink-700); font-size: 15px;
+  line-height: 1.5; margin-top: var(--space-5);
+}
+.tbm-case--scope .tbm-case__steps {
+  list-style: none; margin: var(--space-5) 0 0; padding: 0;
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.tbm-case--scope .tbm-case__steps li {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em;
+  color: var(--tbm-ink-700); text-transform: uppercase;
+  padding: 5px 9px; background: var(--tbm-ink-100);
+  border: 1px solid var(--tbm-ink-200);
+  position: relative;
+}
+.tbm-case--scope .tbm-case__steps li:not(:last-child)::after {
+  content: "→"; position: absolute; right: -12px; top: 50%;
+  transform: translateY(-50%); color: var(--tbm-signal-orange);
+  font-size: 13px;
+}
+.tbm-case--scope .tbm-case__cta { color: var(--tbm-signal-orange); }
+.tbm-case__client { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; }
+.tbm-case__cta { margin-top: var(--space-5); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; }
+
+/* ============ SECTION 8: TBM DIFFERENCE ============ */
+/* overflow visible so the upper-right sticker can spill UP into the case-studies section above */
+.tbm-pillars { background: var(--tbm-master-black); padding: var(--space-10) clamp(28px,4vw,56px); position: relative; overflow: visible; }
+.tbm-pillars::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/divider-2.png');
+  background-size: cover; background-position: center;
+  opacity: 0.08; mix-blend-mode: screen;
+  filter: saturate(0.5) contrast(1.1);
+  pointer-events: none;
+}
+.tbm-pillars__inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+.tbm-pillars__head { margin-bottom: var(--space-9); }
+.tbm-pillars__h2 {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: var(--fs-h2); line-height: 0.9; letter-spacing: -0.015em;
+  text-transform: uppercase; padding: 0.08em 0.06em;
+  margin: 0; max-width: 1100px; text-wrap: balance;
+}
+.tbm-pillars__h2 .y { color: var(--tbm-impact-yellow); }
+.tbm-pillars__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-7); }
+@media (max-width: 980px) { .tbm-pillars__grid { grid-template-columns: 1fr; } }
+.tbm-pillar {
+  position: relative;
+  background: var(--tbm-ink-800);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: var(--space-7) var(--space-6) var(--space-6);
+  transform: translateY(50px) rotate(0deg); opacity: 0;
+  transition: transform 640ms var(--ease-out), opacity 640ms var(--ease-out), box-shadow 320ms var(--ease-out);
+  box-shadow: 8px 8px 0 0 var(--tbm-master-black);
+}
+.tbm-pillar:nth-child(1) { --tilt: -2deg; }
+.tbm-pillar:nth-child(2) { --tilt: 1.5deg; }
+.tbm-pillar:nth-child(3) { --tilt: -1deg; }
+.tbm-pillar.is-in { opacity: 1; transform: translateY(0) rotate(var(--tilt,0deg)); }
+.tbm-pillar:nth-child(2).is-in { transition-delay: 180ms; }
+.tbm-pillar:nth-child(3).is-in { transition-delay: 360ms; }
+.tbm-pillar:hover { transform: translateY(-6px) rotate(0deg); box-shadow: 14px 14px 0 0 var(--tbm-impact-yellow); }
+.tbm-pillar__num {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(96px,9vw,160px); line-height: 1; letter-spacing: -0.025em;
+  color: var(--tbm-impact-yellow); margin-bottom: var(--space-3);
+  padding: 0.08em 0;
+}
+.tbm-pillar:nth-child(2) .tbm-pillar__num { color: var(--tbm-signal-orange); }
+.tbm-pillar:nth-child(3) .tbm-pillar__num { color: var(--tbm-script-white); }
+.tbm-pillar__heading {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(22px,1.8vw,30px); line-height: 1; letter-spacing: -0.005em;
+  text-transform: uppercase; color: var(--tbm-script-white);
+  margin: 0 0 var(--space-4); padding: 0.08em 0;
+}
+.tbm-pillar__body { font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--tbm-ink-200); margin: 0; }
+.tbm-pillars__cta-row { margin-top: var(--space-9); }
+.tbm-pillars__cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--tbm-impact-yellow); text-decoration: none;
+  font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--tbm-impact-yellow); padding-bottom: 4px;
+}
+
+/* ============ SECTION 10: CLOSING CTA ============ */
+.tbm-closing { background: var(--tbm-master-black); padding: var(--space-10) clamp(28px,4vw,56px) calc(var(--space-10) + var(--space-7)); border-top: 1px solid rgba(255,255,255,0.08); position: relative; overflow: hidden; }
+.tbm-closing::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/soul.png');
+  background-size: cover; background-position: center;
+  opacity: 0.15; mix-blend-mode: screen;
+  filter: saturate(0.6) contrast(1.1);
+  pointer-events: none;
+}
+.tbm-closing__inner { max-width: 1480px; margin: 0 auto; position: relative; z-index: 2; }
+.tbm-closing__big {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: var(--fs-mega); line-height: 0.82;
+  letter-spacing: -0.025em; text-transform: uppercase;
+  color: var(--tbm-script-white); margin: 0 0 var(--space-8);
+  padding: 0.08em 0.06em; text-wrap: balance;
+}
+.tbm-closing__big .y { color: var(--tbm-impact-yellow); }
+.tbm-closing__big .o { color: var(--tbm-signal-orange); }
+.tbm-closing__cta-row { display: flex; align-items: center; gap: var(--space-6); flex-wrap: wrap; }
+.tbm-closing__cta-row .tbm-cta-primary { font-size: 20px; padding: 20px 32px 16px; }
+
+/* "Start your project" reborn as a big yellow sticker pinned bottom-right.
+   Magnet JS drives translation via --magnet-x/y CSS vars; base rotation stays applied. */
+.tbm-closing__sticker-cta {
+  position: absolute;
+  /* Nudged up + slightly left into the section's empty right-mid area */
+  right: clamp(60px, 8vw, 180px);
+  bottom: clamp(200px, 20vw, 360px);
+  display: inline-flex; align-items: baseline; gap: 18px;
+  background: var(--tbm-impact-yellow);
+  color: var(--tbm-master-black);
+  font-family: var(--font-display);
+  font-style: italic; font-weight: 900;
+  font-size: clamp(36px, 4.2vw, 72px);
+  line-height: 0.95; letter-spacing: -0.02em;
+  text-transform: uppercase; text-decoration: none;
+  padding: 38px 52px 30px;
+  transform: translate3d(var(--magnet-x, 0px), var(--magnet-y, 0px), 0) rotate(4deg);
+  box-shadow:
+    12px 12px 0 0 var(--tbm-master-black),
+    0 50px 100px -20px rgba(0,0,0,0.7);
+  transition: box-shadow 240ms var(--ease-snap);
+  z-index: 5;
+  max-width: 560px;
+  will-change: transform;
+}
+.tbm-closing__sticker-cta:hover {
+  box-shadow:
+    14px 14px 0 0 var(--tbm-master-black),
+    0 50px 90px -20px rgba(0,0,0,0.75);
+}
+.tbm-closing__sticker-cta .arr {
+  font-size: 0.9em;
+  transition: transform 220ms var(--ease-snap);
+}
+.tbm-closing__sticker-cta:hover .arr { transform: translateX(8px); }
+@media (max-width: 720px) {
+  .tbm-closing__sticker-cta { position: static; transform: rotate(2deg); margin-top: var(--space-7); }
+}
+.tbm-closing__alt {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em;
+  color: var(--tbm-ink-300); text-transform: uppercase;
+}
+.tbm-closing__alt a {
+  color: var(--tbm-script-white); text-decoration: none;
+  border-bottom: 1px solid var(--tbm-impact-yellow); padding-bottom: 2px;
+}
+
+/* ============ FOOTER ============ */
+.tbm-footer { background: var(--tbm-master-black); padding: var(--space-10) clamp(28px,4vw,56px) var(--space-8); border-top: 1px solid rgba(255,255,255,0.08); position: relative; overflow: hidden; }
+.tbm-footer::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: url('https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bg/texture_page-distress_1.png');
+  background-size: cover; opacity: 0.08;
+  mix-blend-mode: screen; pointer-events: none;
+}
+.tbm-footer__big, .tbm-footer__cols, .tbm-footer__bottom { position: relative; z-index: 1; }
+.tbm-footer__cols {
+  max-width: 1280px; margin: 0 auto; position: relative;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-7);
+}
+@media (max-width: 880px) { .tbm-footer__cols { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .tbm-footer__cols { grid-template-columns: 1fr; } }
+.tbm-footer__col h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.3em; color: var(--tbm-ink-500); text-transform: uppercase; font-weight: 500; margin: 0 0 var(--space-4); }
+.tbm-footer__col ul { list-style: none; margin: 0; padding: 0; }
+.tbm-footer__col li { margin-bottom: var(--space-3); }
+.tbm-footer__col a { font-family: var(--font-body); font-size: 15px; color: var(--tbm-ink-200); text-decoration: none; }
+.tbm-footer__col a:hover { color: var(--tbm-impact-yellow); }
+.tbm-footer__col p { font-family: var(--font-body); font-size: 13px; color: var(--tbm-ink-300); line-height: 1.5; margin: 0 0 var(--space-3); }
+.tbm-footer__bottom { max-width: 1280px; margin: var(--space-8) auto 0; padding-top: var(--space-6); border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; gap: var(--space-5); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; color: var(--tbm-ink-500); text-transform: uppercase; flex-wrap: wrap; position: relative; z-index: 1; }
+.tbm-footer__bottom .secret { color: var(--tbm-ink-600); text-decoration: none; opacity: 0.5; }
+.tbm-footer__bottom .secret:hover { opacity: 1; color: var(--tbm-impact-yellow); }
+.tbm-footer__big {
+  font-family: var(--font-display); font-weight: 900; font-style: italic;
+  font-size: clamp(96px,15vw,260px); line-height: 0.78;
+  text-transform: uppercase; letter-spacing: -0.03em;
+  color: var(--tbm-ink-800); margin: 0 0 var(--space-9);
+  padding: 0.08em 0.06em; max-width: 1480px;
+  text-wrap: balance;
+}
+.tbm-footer__big .y { color: var(--tbm-impact-yellow); -webkit-text-fill-color: var(--tbm-impact-yellow); }
+.tbm-footer__big .outline {
+  -webkit-text-stroke: 1.5px var(--tbm-ink-600);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+</style>
+
+<!-- GSAP + ScrollTrigger — for true scroll-pin on the manifesto -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- SVG filter defs (reused across all marker motifs) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="ink-rough" x="-20%" y="-40%" width="140%" height="180%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.4"/>
+    </filter>
+    <filter id="dry-brush" x="-10%" y="-30%" width="120%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="11" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.6 -0.35" result="mask"/>
+      <feComposite in="SourceGraphic" in2="mask" operator="in" result="brushed"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="4" result="wobble"/>
+      <feDisplacementMap in="brushed" in2="wobble" scale="3.5"/>
+    </filter>
+    <filter id="torn-edge" x="-3%" y="-10%" width="106%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.08" numOctaves="2" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" scale="1.8"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- CINEMATIC LOADER -->
+<div class="tbm-loader" id="loader">
+  <div class="tbm-loader__count">Loading reel<span class="num" id="loaderNum">000</span></div>
+  <div class="tbm-loader__bar" id="loaderBar"></div>
+  <div class="tbm-loader__status"><span class="blink"></span>Color-grading frames · audio-bouncing master</div>
+  <div class="tbm-loader__tag">TBM · Dallas · Est 2014</div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<svg class="tbm-cursor" id="cursor" aria-hidden="true" width="28" height="28" viewBox="-14 -14 28 28">
+  <defs>
+    <linearGradient id="cursorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#FFD500"/>
+      <stop offset="100%" stop-color="#E8821A"/>
+    </linearGradient>
+  </defs>
+  <polygon class="tbm-cursor__shape" points="0,-10 7,-7 10,-1 8,6 2,10 -5,9 -9,3 -9,-5 -4,-9"
+    fill="url(#cursorGrad)" stroke="#FFFFFF" stroke-width="0.5" stroke-linejoin="round"/>
+</svg>
+
+<!-- TOP NAV -->
+<div class="tbm-nav-backdrop" aria-hidden="true"></div>
+<nav class="tbm-nav" id="topNav" aria-label="Primary">
+  <a href="#hero" class="tbm-nav__brand" data-hot aria-label="Think Branded Media — home">
+    <span class="tbm-nav__brand-text">TBM</span>
+  </a>
+  <ul class="tbm-nav__links">
+    <li><a href="#work" data-hot>work</a></li>
+    <li><a href="#services" data-hot>services</a></li>
+    <li><a href="#how-we-work" data-hot>thinking</a></li>
+    <li><a href="#case-studies" data-hot>proof</a></li>
+  </ul>
+  <div class="tbm-nav__right">
+    <span class="tbm-nav__clock" id="clock">00:00 CT</span>
+    <a href="#contact" class="tbm-nav__quote" data-hot>Get Quote →</a>
+  </div>
+</nav>
+
+<!-- ============ SECTION 1: HERO ============ -->
+<section class="tbm-hero" id="hero">
+  <div class="tbm-hero__bg" aria-hidden="true">
+    <iframe id="heroIframe" class="tbm-hero__bg-iframe"
+      src="https://player.vimeo.com/video/871596219?background=1&autoplay=1&loop=1&muted=1&dnt=1"
+      allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="Hero background loop"></iframe>
+  </div>
+  <div class="tbm-hero__gradient" aria-hidden="true"></div>
+  <div class="tbm-hero__grain" aria-hidden="true"></div>
+  <div class="tbm-hero__content">
+    <p class="tbm-hero__eyebrow">Real stories. Real people. Real results.</p>
+    <h1 class="tbm-hero__title">
+      Cinematic video production<br>
+      made in <span class="y">Dallas</span>,<br>
+      built to perform.
+    </h1>
+    <p class="tbm-hero__subhead">A creative strategy agency for brands done settling for safe, forgettable content.</p>
+    <div class="tbm-hero__cta-row">
+      <a href="#contact" class="tbm-cta-primary" data-hot>Start your project <span class="arr">→</span></a>
+      <button type="button" class="tbm-cta-secondary" id="playReelBtn" data-hot>
+        <span class="play" aria-hidden="true"></span> Play hero reel
+      </button>
+    </div>
+  </div>
+  <div class="tbm-hero__meta" aria-hidden="true">
+    <span class="pulse"></span>EST. DALLAS, TX<br>
+    <span class="rule"></span><br>
+    Creative strategy agency<br>
+    for brands that refuse<br>
+    to be forgotten.
+  </div>
+  <div class="tbm-hero__scroll-cue" aria-hidden="true">SCROLL</div>
+  <button type="button" class="tbm-hero__close" id="closePlayBtn" aria-label="Close hero reel" data-hot>Close</button>
+</section>
+
+<div class="tbm-section-rule" aria-hidden="true">
+  <div><span class="dot"></span>TBM &mdash; 01 / DALLAS VIDEO PRODUCTION</div>
+  <div>EST 2014 &middot; MADE IN TEXAS</div>
+</div>
+
+<!-- TICKER between Section 1 and 2 -->
+<div class="tbm-ticker" aria-hidden="true">
+  <div class="tbm-ticker__track">
+    <ul class="tbm-ticker__list">
+      <li><span class="emj">🎯</span> Strategy first</li>
+      <li><span class="emj">🎥</span> Cameras second</li>
+      <li><span class="emj">🎞️</span> Cinematic, every frame</li>
+      <li><span class="emj">📍</span> Made in Dallas</li>
+      <li><span class="emj">📣</span> Built to perform</li>
+      <li><span class="emj">🎬</span> Real stories. Real people. Real results.</li>
+    </ul>
+    <ul class="tbm-ticker__list" aria-hidden="true">
+      <li><span class="emj">🎯</span> Strategy first</li>
+      <li><span class="emj">🎥</span> Cameras second</li>
+      <li><span class="emj">🎞️</span> Cinematic, every frame</li>
+      <li><span class="emj">📍</span> Made in Dallas</li>
+      <li><span class="emj">📣</span> Built to perform</li>
+      <li><span class="emj">🎬</span> Real stories. Real people. Real results.</li>
+    </ul>
+    <ul class="tbm-ticker__list" aria-hidden="true">
+      <li><span class="emj">🎯</span> Strategy first</li>
+      <li><span class="emj">🎥</span> Cameras second</li>
+      <li><span class="emj">🎞️</span> Cinematic, every frame</li>
+      <li><span class="emj">📍</span> Made in Dallas</li>
+      <li><span class="emj">📣</span> Built to perform</li>
+      <li><span class="emj">🎬</span> Real stories. Real people. Real results.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ SECTION 2: LOGO BAND ============ -->
+<section class="tbm-logo-band" id="logo-band">
+  <div class="tbm-logo-band__eyebrow">Trusted by teams at</div>
+  <div class="tbm-logo-band__viewport">
+    <div class="tbm-logo-band__track">
+      <ul class="tbm-logo-band__list">
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/cat_w.png" alt="Caterpillar"></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--sans">ArcBest</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--serif">GQ</span></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/scottish-rite_w.png" alt="Scottish Rite for Children"></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--serif">Rice University</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--condensed">BELFOR</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--sans">VMG Health</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--mono">Wellfit</span></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/patagonia_w.png" alt="Patagonia"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/amazon_w.png" alt="Amazon"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/modelo_w.png" alt="Modelo"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/hennessy_w.png" alt="Hennessy"></li>
+      </ul>
+      <ul class="tbm-logo-band__list" aria-hidden="true">
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/cat_w.png" alt="Caterpillar"></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--sans">ArcBest</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--serif">GQ</span></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/scottish-rite_w.png" alt="Scottish Rite"></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--serif">Rice University</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--condensed">BELFOR</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--sans">VMG Health</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--mono">Wellfit</span></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/patagonia_w.png" alt="Patagonia"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/amazon_w.png" alt="Amazon"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/modelo_w.png" alt="Modelo"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/hennessy_w.png" alt="Hennessy"></li>
+      </ul>
+      <ul class="tbm-logo-band__list" aria-hidden="true">
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/cat_w.png" alt="Caterpillar"></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--sans">ArcBest</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--serif">GQ</span></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/scottish-rite_w.png" alt="Scottish Rite"></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--serif">Rice University</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--condensed">BELFOR</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--sans">VMG Health</span></li>
+        <li class="tbm-logo-band__item"><span class="wordmark wordmark--mono">Wellfit</span></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/patagonia_w.png" alt="Patagonia"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/amazon_w.png" alt="Amazon"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/modelo_w.png" alt="Modelo"></li>
+        <li class="tbm-logo-band__item"><img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/hennessy_w.png" alt="Hennessy"></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="tbm-section-rule" aria-hidden="true">
+  <div><span class="dot"></span>TBM &mdash; 03 / WHO WE ARE</div>
+  <div>SECTION 03 / 10</div>
+</div>
+
+<!-- ============ SECTION 3: BRAND POSITIONING ============ -->
+<section class="tbm-manifesto" id="positioning">
+  <div class="tbm-manifesto__bg" aria-hidden="true"></div>
+  <div class="tbm-manifesto__bg-2" aria-hidden="true"></div>
+  <img class="tbm-sticker tbm-sticker--lg tbm-sticker--wobble" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker.png" alt="" style="top:8%;right:5%;--rot:-12deg;z-index:6">
+  <img class="tbm-sticker tbm-sticker--sm" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker9.png" alt="" style="bottom:14%;left:3%;--rot:18deg;z-index:6">
+  <div class="tbm-manifesto__meta">
+    <div><span class="chip">MANIFESTO</span> &nbsp; No 01</div>
+    <div>Scroll &middot; read aloud</div>
+  </div>
+  <div class="tbm-manifesto__sticky">
+    <h2 class="tbm-manifesto__copy" id="manifestoCopy"
+        data-manifesto='[
+          {"t":"We","mark":""},
+          {"t":"are","mark":""},
+          {"t":"not","mark":""},
+          {"t":"a","mark":""},
+          {"t":"production","mark":"orange"},
+          {"t":"house.","mark":"orange"},
+          {"t":"We","mark":""},
+          {"t":"are","mark":""},
+          {"t":"the","mark":""},
+          {"t":"creative","mark":"hot"},
+          {"t":"strategy","mark":"hot"},
+          {"t":"agency","mark":"hot"},
+          {"t":"that","mark":""},
+          {"t":"shows","mark":""},
+          {"t":"up","mark":""},
+          {"t":"before","mark":"hot"},
+          {"t":"the","mark":""},
+          {"t":"cameras","mark":""},
+          {"t":"roll.","mark":""}
+        ]'></h2>
+  </div>
+  <div class="tbm-manifesto__scroll-hint" aria-hidden="true">SCROLL TO READ</div>
+</section>
+
+<!-- Supporting body — body copy + CTA + BTS still (below the sticky manifesto) -->
+<section class="tbm-positioning-body" id="positioning-body">
+  <div class="tbm-positioning-body__bg" aria-hidden="true"></div>
+  <img class="tbm-sticker tbm-sticker--md" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker2.png" alt="" style="top:-60px;right:5%;--rot:-9deg;z-index:20">
+  <div class="tbm-positioning-body__inner">
+    <div class="tbm-positioning-body__copy">
+      <div class="tbm-portfolio__eyebrow">● &nbsp; The work behind the work</div>
+      <h2 class="tbm-positioning-body__hl">
+        <span class="small">Anyone can press record.</span>
+        <span class="big">We start <span class="y">way earlier</span>.</span>
+      </h2>
+      <ul class="tbm-positioning-body__list">
+        <li><strong>Audience</strong> before assumptions.</li>
+        <li><strong>Strategy</strong> before story.</li>
+        <li><strong>Push-back</strong> when the brief's wrong.</li>
+        <li><strong>Senior team</strong> &mdash; the same one that pitched.</li>
+        <li><strong>An edit</strong> that earns every frame.</li>
+      </ul>
+      <p class="tbm-positioning-body__kicker">
+        By the time we say &ldquo;action,&rdquo; the hardest work is done.
+      </p>
+      <a href="#how-we-work" class="tbm-positioning-body__cta" data-hot>See how we work <span class="arr">→</span></a>
+    </div>
+    <div class="tbm-bts-stack" data-bts-stack aria-hidden="true">
+      <div class="tbm-bts-card"><img alt=""><span class="label">On set · Dallas</span></div>
+      <div class="tbm-bts-card"><img alt=""><span class="label">Camera up</span></div>
+      <div class="tbm-bts-card"><img alt=""><span class="label">Crew check</span></div>
+      <div class="tbm-bts-card"><img alt=""><span class="label">Frame review</span></div>
+      <div class="tbm-bts-card"><img alt=""><span class="label">Strategy first</span></div>
+      <div class="tbm-bts-card"><img alt=""><span class="label">Roll camera</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKERBOARD BAR before Section 4 (Selected Work) -->
+<div class="tbm-ticker tbm-ticker--checker" aria-hidden="true"></div>
+
+<!-- ============ SECTION 4: PORTFOLIO TEASE ============ -->
+<section class="tbm-portfolio" id="work">
+  <img class="tbm-sticker tbm-sticker--md" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker11.png" alt="" style="top:8%;right:4%;--rot:-12deg">
+  <img class="tbm-sticker tbm-sticker--sm" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker3.png" alt="" style="top:48%;left:2%;--rot:18deg;--op:0.85">
+  <div class="tbm-portfolio__head">
+    <div>
+      <div class="tbm-portfolio__eyebrow">● &nbsp; Selected work · 2022→2026</div>
+      <h2 class="tbm-portfolio__h2">Receipts, <span class="crossed">not reels</span>.</h2>
+      <p class="tbm-portfolio__sub">Films we made, with clients we built relationships with, that did the thing they were supposed to do.</p>
+    </div>
+    <a href="/work" class="tbm-portfolio__cta" data-hot>See all work →</a>
+  </div>
+  <div class="tbm-portfolio__track-wrap" id="portfolioScroll">
+    <div class="tbm-portfolio__track">
+      <button type="button" data-href="/work/beef" onclick="window.openWorkModal && window.openWorkModal('beef')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-beef"></div>
+        <div class="vignette"></div>
+        <div class="num">01 / 09</div>
+        <div class="tag">National TV spot</div>
+        <div class="meta">
+          <h3 class="title">Beef. It's What's For Dinner.</h3>
+          <div class="sub"><span>Broadcast · national reach</span><span class="arr">→</span></div>
+        </div>
+      </button>
+      <button type="button" data-href="/work/caterpillar" onclick="window.openWorkModal && window.openWorkModal('caterpillar')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-cat"></div>
+        <div class="vignette"></div>
+        <div class="num">02 / 09</div>
+        <div class="tag">Brand film + launches</div>
+        <div class="meta">
+          <h3 class="title">Caterpillar</h3>
+          <div class="sub"><span>Iron Works · Electric Power · Digital</span><span class="arr">→</span></div>
+        </div>
+      </button>
+      <button type="button" data-href="/work/psychica" onclick="window.openWorkModal && window.openWorkModal('psychica')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-psy"></div>
+        <div class="vignette"></div>
+        <div class="num">03 / 09</div>
+        <div class="tag">Full campaign · start to finish</div>
+        <div class="meta">
+          <h3 class="title">Psychica</h3>
+          <div class="sub"><span>Strategy · cast · ship</span><span class="arr">→</span></div>
+        </div>
+      </button>
+      <button type="button" data-href="/work/angel-reyes" onclick="window.openWorkModal && window.openWorkModal('angel-reyes')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-angel"></div>
+        <div class="vignette"></div>
+        <div class="num">04 / 09</div>
+        <div class="tag">Award-winning social campaign</div>
+        <div class="meta">
+          <h3 class="title">Angel Reyes</h3>
+          <div class="sub"><span>Short-form · earned media</span><span class="arr">→</span></div>
+        </div>
+      </button>
+      <button type="button" data-href="/work/scottish-rite" onclick="window.openWorkModal && window.openWorkModal('scottish-rite')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-srh"></div>
+        <div class="vignette"></div>
+        <div class="num">05 / 09</div>
+        <div class="tag">Fundraising anthem</div>
+        <div class="meta">
+          <h3 class="title">Scottish Rite</h3>
+          <div class="sub"><span>Brand impact · vendor doors opened</span><span class="arr">→</span></div>
+        </div>
+      </button>
+      <button type="button" data-href="/work/circle-o" onclick="window.openWorkModal && window.openWorkModal('circle-o')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-co"></div>
+        <div class="vignette"></div>
+        <div class="num">06 / 09</div>
+        <div class="tag">Brand film</div>
+        <div class="meta">
+          <h3 class="title">Circle O</h3>
+          <div class="sub"><span>The story behind the brand</span><span class="arr">→</span></div>
+        </div>
+      </button>
+      <button type="button" data-href="/work/rahman" onclick="window.openWorkModal && window.openWorkModal('rahman')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-rah"></div>
+        <div class="vignette"></div>
+        <div class="num">07 / 09</div>
+        <div class="tag">Brand film</div>
+        <div class="meta">
+          <h3 class="title">Rahman</h3>
+          <div class="sub"><span>Portrait · story-led</span><span class="arr">→</span></div>
+        </div>
+      </button>
+      <button type="button" data-href="/work/gq" onclick="window.openWorkModal && window.openWorkModal('gq')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-gq"></div>
+        <div class="vignette"></div>
+        <div class="num">08 / 09</div>
+        <div class="tag">Original series</div>
+        <div class="meta">
+          <h3 class="title">GQ / Condé Nast</h3>
+          <div class="sub"><span>Cinematic editorial series</span><span class="arr">→</span></div>
+        </div>
+      </button>
+      <button type="button" data-href="/work/arcbest" onclick="window.openWorkModal && window.openWorkModal('arcbest')" class="tbm-portfolio__tile" data-hot>
+        <div class="poster poster-arc"></div>
+        <div class="vignette"></div>
+        <div class="num">09 / 09</div>
+        <div class="tag">Campaign + B-roll library</div>
+        <div class="meta">
+          <h3 class="title">ArcBest</h3>
+          <div class="sub"><span>Multi-year visual system</span><span class="arr">→</span></div>
+        </div>
+      </button>
+    </div>
+  </div>
+  <div class="tbm-portfolio__hint">
+    <div><span class="cur" id="portfolioCur">01</span> / 09</div>
+    <div>⇆ &nbsp; DRAG / SCROLL</div>
+  </div>
+</section>
+
+<!-- TICKER between Section 4 and 5 -->
+<div class="tbm-ticker tbm-ticker--dark" aria-hidden="true">
+  <div class="tbm-ticker__track">
+    <span>Ideation ● Commercials &amp; TV ● Brand Films ● Corporate Video ● Always-On Content ● Event Coverage ● Social &amp; Short-Form ● Documentary ● Ideation ● Commercials &amp; TV ● Brand Films ● Corporate Video ● Always-On Content ● Event Coverage ● Social &amp; Short-Form ● Documentary</span>
+  </div>
+</div>
+
+<!-- ============ SECTION 5: WHAT WE OFFER ============ -->
+<section class="tbm-offer" id="services">
+  <div class="tbm-offer__bg" aria-hidden="true"></div>
+  <img class="tbm-sticker tbm-sticker--lg tbm-sticker--wobble" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker4.png" alt="" style="top:4%;left:3%;--rot:-9deg">
+  <img class="tbm-sticker tbm-sticker--sm" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker8.png" alt="" style="bottom:10%;right:3%;--rot:12deg;--op:0.9">
+  <div class="tbm-offer__head">
+    <div>
+      <div class="tbm-portfolio__eyebrow">● &nbsp; What we build</div>
+      <h2 class="tbm-offer__h2">Strategy first. <span class="y">Cameras second.</span></h2>
+      <p class="tbm-offer__sub">Every project starts with ideation. What you see on screen is the result, not the work itself.</p>
+    </div>
+    <a href="/services" class="tbm-portfolio__cta" data-hot>view all services →</a>
+  </div>
+  <div class="tbm-offer__cards">
+    <a href="/services/ideation" class="tbm-offer__card is-star" data-hot>
+      <div>
+        <div class="num">01 · LEAD</div>
+        <h3 class="label">Ideation</h3>
+        <p class="tagline">Strategy and story, before a single camera turns on. Where the work starts.</p>
+      </div>
+      <div class="arr">explore →</div>
+    </a>
+    <a href="/services/commercial-production" class="tbm-offer__card" data-hot>
+      <div>
+        <div class="num">02</div>
+        <h3 class="label">Commercials &amp; TV</h3>
+        <p class="tagline">Spots that earn the airtime they're paying for.</p>
+      </div>
+      <div class="arr">explore →</div>
+    </a>
+    <a href="/services/brand-films" class="tbm-offer__card" data-hot>
+      <div>
+        <div class="num">03</div>
+        <h3 class="label">Brand Films</h3>
+        <p class="tagline">The cinematic anthem that makes a brand impossible to ignore.</p>
+      </div>
+      <div class="arr">explore →</div>
+    </a>
+    <a href="/services/b2b-video" class="tbm-offer__card" data-hot>
+      <div>
+        <div class="num">04</div>
+        <h3 class="label">Corporate Video</h3>
+        <p class="tagline">Complex products and stories, told in a way the buyer actually wants to watch.</p>
+      </div>
+      <div class="arr">explore →</div>
+    </a>
+  </div>
+</section>
+
+<div class="tbm-section-rule" aria-hidden="true">
+  <div><span class="dot"></span>TBM &mdash; 06 / ALWAYS-ON CONTENT</div>
+  <div>SECTION 06 / 10 &middot; RETAINER MODEL</div>
+</div>
+
+<!-- ============ SECTION 6: ALWAYS-ON CONTENT ============ -->
+<section class="tbm-aoc" id="aoc">
+  <div class="tbm-aoc__band" aria-hidden="true"></div>
+  <img class="tbm-sticker tbm-sticker--md tbm-sticker--wobble" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker6.png" alt="" style="top:14%;left:2%;--rot:11deg">
+  <img class="tbm-sticker tbm-sticker--sm" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker10.png" alt="" style="bottom:8%;right:2%;--rot:-7deg">
+  <div class="tbm-aoc__inner">
+    <div class="tbm-aoc__copy">
+      <div class="tbm-portfolio__eyebrow">● &nbsp; Always-On Content · Retainer</div>
+      <h2 class="tbm-aoc__h2">A senior content team on retainer. <span class="y">No agency markup.</span> No fluff.</h2>
+      <p class="tbm-aoc__body">
+        Most brands need a steady drip of cinematic content — not another six-figure brand film once a year. We built Always-On Content for the teams that already know what good looks like and want a partner who can ship it every week. Senior creative direction. Strategic content planning. Same crew, every shoot. One predictable monthly investment.
+      </p>
+      <a href="/services/always-on-content" class="tbm-cta-primary" data-hot>See how Always-On works <span class="arr">→</span></a>
+    </div>
+    <div class="tbm-aoc__devices" data-aoc-pile>
+      <!-- iPAD (landscape) — freeze frame + play button. Click the device to start the long-form video with sound. -->
+      <button type="button" class="tbm-aoc__device tbm-aoc__device--ipad" data-aoc-device="ipad" data-aoc-video="https://player.vimeo.com/video/1184866702" aria-label="Play long-form anchor video with sound">
+        <div class="tbm-aoc__device-screen">
+          <iframe class="tbm-aoc__device-iframe" data-vimeo-slot allow="autoplay; fullscreen; picture-in-picture; encrypted-media" frameborder="0" title="Long-form anchor"></iframe>
+          <div class="tbm-aoc__ipad-poster" aria-hidden="true">
+            <span class="tbm-aoc__ipad-play">
+              <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <circle cx="32" cy="32" r="30" fill="rgba(0,0,0,0.35)" stroke="white" stroke-width="1.5"/>
+                <polygon points="26,21 26,43 45,32" fill="white"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </button>
+
+      <!-- PHONE 1 -->
+      <button type="button" class="tbm-aoc__device tbm-aoc__device--phone tbm-aoc__device--p1" data-aoc-device="p1" data-aoc-video="https://player.vimeo.com/video/1184227741" aria-label="Social reel 1">
+        <span class="tbm-aoc__device-tag">Reel · 01</span>
+        <div class="tbm-aoc__device-screen">
+          <iframe class="tbm-aoc__device-iframe" data-vimeo-slot allow="autoplay; fullscreen; picture-in-picture; encrypted-media" frameborder="0" title="Social reel 1"></iframe>
+          <div class="tbm-aoc__ig-overlay" aria-hidden="true">
+            <div class="tbm-aoc__ig-progress"></div>
+            <div class="tbm-aoc__ig-handle">
+              <span class="av"></span><span class="name">thinkbranded</span><span class="time">· 2h</span>
+            </div>
+            <div class="tbm-aoc__ig-actions">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span class="count">12.4K</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="tbm-aoc__ig-caption"><strong>thinkbranded</strong>Strategy first. Cameras second. <span style="opacity:.7">#alwayson</span></div>
+          </div>
+        </div>
+      </button>
+
+      <!-- PHONE 2 -->
+      <button type="button" class="tbm-aoc__device tbm-aoc__device--phone tbm-aoc__device--p2" data-aoc-device="p2" data-aoc-video="https://player.vimeo.com/video/1184227750" aria-label="Social reel 2">
+        <span class="tbm-aoc__device-tag">Reel · 02</span>
+        <div class="tbm-aoc__device-screen">
+          <iframe class="tbm-aoc__device-iframe" data-vimeo-slot allow="autoplay; fullscreen; picture-in-picture; encrypted-media" frameborder="0" title="Social reel 2"></iframe>
+          <div class="tbm-aoc__ig-overlay" aria-hidden="true">
+            <div class="tbm-aoc__ig-progress"></div>
+            <div class="tbm-aoc__ig-handle">
+              <span class="av"></span><span class="name">thinkbranded</span><span class="time">· 6h</span>
+            </div>
+            <div class="tbm-aoc__ig-actions">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span class="count">8.7K</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="tbm-aoc__ig-caption"><strong>thinkbranded</strong>Made in Dallas. Built to perform. <span style="opacity:.7">#receipts</span></div>
+          </div>
+        </div>
+      </button>
+
+      <!-- PHONE 3 -->
+      <button type="button" class="tbm-aoc__device tbm-aoc__device--phone tbm-aoc__device--p3" data-aoc-device="p3" data-aoc-video="https://player.vimeo.com/video/1184227760" aria-label="Social reel 3">
+        <span class="tbm-aoc__device-tag">Reel · 03</span>
+        <div class="tbm-aoc__device-screen">
+          <iframe class="tbm-aoc__device-iframe" data-vimeo-slot allow="autoplay; fullscreen; picture-in-picture; encrypted-media" frameborder="0" title="Social reel 3"></iframe>
+          <div class="tbm-aoc__ig-overlay" aria-hidden="true">
+            <div class="tbm-aoc__ig-progress"></div>
+            <div class="tbm-aoc__ig-handle">
+              <span class="av"></span><span class="name">thinkbranded</span><span class="time">· 1d</span>
+            </div>
+            <div class="tbm-aoc__ig-actions">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span class="count">21.1K</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="tbm-aoc__ig-caption"><strong>thinkbranded</strong>Real stories. Real people. Real results.</div>
+          </div>
+        </div>
+      </button>
+
+      <!-- PHONE 4 -->
+      <button type="button" class="tbm-aoc__device tbm-aoc__device--phone tbm-aoc__device--p4" data-aoc-device="p4" data-aoc-video="https://player.vimeo.com/video/1184227771" aria-label="Social reel 4">
+        <span class="tbm-aoc__device-tag">Reel · 04</span>
+        <div class="tbm-aoc__device-screen">
+          <iframe class="tbm-aoc__device-iframe" data-vimeo-slot allow="autoplay; fullscreen; picture-in-picture; encrypted-media" frameborder="0" title="Social reel 4"></iframe>
+          <div class="tbm-aoc__ig-overlay" aria-hidden="true">
+            <div class="tbm-aoc__ig-progress"></div>
+            <div class="tbm-aoc__ig-handle">
+              <span class="av"></span><span class="name">thinkbranded</span><span class="time">· 3d</span>
+            </div>
+            <div class="tbm-aoc__ig-actions">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <span class="count">5.3K</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="tbm-aoc__ig-caption"><strong>thinkbranded</strong>What good content actually looks like. <span style="opacity:.7">#bts</span></div>
+          </div>
+        </div>
+      </button>
+
+      <div class="tbm-aoc__hint"><span class="dot"></span> Tap the iPad · Hear the work</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKERBOARD BAR between AOC and Case Studies -->
+<div class="tbm-ticker tbm-ticker--checker" aria-hidden="true"></div>
+
+<!-- ============ SECTION 7: CASE STUDIES ============ -->
+<section class="tbm-cases" id="case-studies">
+  <img class="tbm-sticker tbm-sticker--lg tbm-sticker--wobble" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker5.png" alt="" style="top:4%;right:4%;--rot:-8deg">
+  <img class="tbm-sticker tbm-sticker--sm" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker2.png" alt="" style="bottom:24%;left:2%;--rot:14deg;--op:0.9">
+  <div class="tbm-cases__inner">
+    <div class="tbm-cases__head">
+      <div>
+        <div class="tbm-portfolio__eyebrow">● &nbsp; Case studies · receipts</div>
+        <h2 class="tbm-cases__h2">When the brief was simple, the work <span class="o">wasn't</span>.</h2>
+        <p class="tbm-offer__sub">Three projects, three different problems, three different ways we measured what mattered.</p>
+      </div>
+      <a href="/work" class="tbm-portfolio__cta" data-hot>view all →</a>
+    </div>
+  </div>
+  <!-- Studio-floor canvas spans the full section width (sibling of .tbm-cases__inner) -->
+  <div class="tbm-cases__canvas" id="casesCanvas">
+      <div class="tbm-cases__world" id="casesWorld">
+        <a href="/work/caterpillar" class="tbm-case tbm-case--metrics" data-hot style="left:280px;  top:200px;">
+          <div>
+            <div class="tbm-case__client">Caterpillar · Iron Works / Electric Power</div>
+            <div class="tbm-case__metric">+217%</div>
+            <div class="tbm-case__metric-label">Engagement across 3 divisions</div>
+            <p class="tbm-case__problem">Three product launches, three different audiences, one cinematic system that scaled.</p>
+          </div>
+          <div class="tbm-case__cta">Read the case study →</div>
+        </a>
+        <a href="/work/jps" class="tbm-case tbm-case--outcome" data-hot style="left:1020px; top:480px;">
+          <div>
+            <div class="tbm-case__client">JPS Health Network</div>
+            <div class="tbm-case__quote-marks">❝</div>
+            <div class="tbm-case__outcome">Raised $10M at fundraising events.</div>
+            <p class="tbm-case__problem">A donor-facing anthem that earned the room before the ask.</p>
+          </div>
+          <div class="tbm-case__cta">Read the case study →</div>
+        </a>
+        <a href="/work/beef" class="tbm-case tbm-case--scope" data-hot style="left:1760px; top:220px;">
+          <div>
+            <div class="tbm-case__client">Beef. It's What's For Dinner</div>
+            <div class="tbm-case__scope-line">A&ndash;to&ndash;Z creative</div>
+            <p class="tbm-case__problem">Full creative authorship — strategy through delivery — for a national category brand.</p>
+            <ul class="tbm-case__steps">
+              <li>Concept</li><li>Storyboard</li><li>Design</li><li>Shoot</li><li>Edit</li><li>Launch</li>
+            </ul>
+          </div>
+          <div class="tbm-case__cta">Read the case study →</div>
+        </a>
+
+        <!-- ============ Studio-floor scatter — notes, stats, receipts, chips, quotes, logo strip ============ -->
+
+        <!-- Section heading inside the world so users see context as they pan in -->
+        <span class="tbm-cases__tag" style="left:60px;  top:40px;">● Studio floor · drag</span>
+        <span class="tbm-cases__chip tbm-cases__chip--accent" style="left:1100px; top:60px;">● Field notes · 2014 → 2026</span>
+        <span class="tbm-cases__chip"                          style="left:780px;  top:90px;">x · 720  ·  y · 480</span>
+        <span class="tbm-cases__chip"                          style="left:2120px; top:80px;">x · 1980  ·  y · 220</span>
+        <span class="tbm-cases__chip"                          style="left:1820px; top:1280px;">scope · spot · script · score</span>
+        <span class="tbm-cases__chip tbm-cases__chip--accent" style="left:980px;  top:1300px;">● Receipts</span>
+        <span class="tbm-cases__chip"                          style="left:120px;  top:1320px;">2014 → 2026 · still shipping</span>
+        <span class="tbm-cases__chip"                          style="left:340px;  top:60px;">dallas · est. 2014</span>
+
+        <!-- Field notes / wall tags / house rules -->
+        <div class="tbm-cases__note" style="left:80px;   top:130px;">
+          <span class="tag">/ Field note 014</span>
+          <span class="body">Neurons that fire together, buy together.</span>
+        </div>
+        <div class="tbm-cases__note" style="left:1820px; top:160px;">
+          <span class="tag">/ Wall tag</span>
+          <span class="body">We don't whisper.</span>
+        </div>
+        <div class="tbm-cases__note is-sticky" style="left:820px;  top:1120px;">
+          <span class="tag">/ House rule</span>
+          <span class="body">Discern. Decide. Differentiate.</span>
+        </div>
+        <div class="tbm-cases__note" style="left:2120px; top:920px;">
+          <span class="tag">/ Louder</span>
+          <span class="body">Everything else is just a video.</span>
+        </div>
+        <div class="tbm-cases__note is-sticky" style="left:80px;   top:560px;">
+          <span class="tag">/ The brief</span>
+          <span class="body">If the room doesn't lean in, kill it.</span>
+        </div>
+
+        <!-- Stats — numbers that earn themselves -->
+        <div class="tbm-cases__stat" style="left:1100px; top:140px;">
+          <span class="n">200+</span>
+          <span class="lbl">Films shipped · 2014 → 2026</span>
+        </div>
+        <div class="tbm-cases__stat" style="left:2120px; top:540px;">
+          <span class="n">$167K+</span>
+          <span class="lbl">Largest single engagement</span>
+        </div>
+        <div class="tbm-cases__stat" style="left:60px;   top:1080px;">
+          <span class="n">7</span>
+          <span class="lbl">Industries served</span>
+        </div>
+        <div class="tbm-cases__stat" style="left:1520px; top:1040px;">
+          <span class="n">12y</span>
+          <span class="lbl">Of branding loudly</span>
+        </div>
+
+        <!-- Itemized client receipts -->
+        <div class="tbm-cases__receipt" style="left:380px;  top:900px;">
+          <div class="head">Caterpillar · Iron Works</div>
+          <ul>
+            <li><span>Brand film</span><span>×1</span></li>
+            <li><span>Product spots</span><span>×3</span></li>
+            <li><span>Internal hype</span><span>×2</span></li>
+          </ul>
+          <div class="total"><span>Engagement</span><span>+217%</span></div>
+        </div>
+        <div class="tbm-cases__receipt" style="left:1320px; top:580px;">
+          <div class="head">Scottish Rite · 2024</div>
+          <ul>
+            <li><span>Anthem</span><span>×1</span></li>
+            <li><span>Donor cuts</span><span>×4</span></li>
+            <li><span>Social pulls</span><span>×12</span></li>
+          </ul>
+          <div class="total"><span>Raised</span><span>$10M</span></div>
+        </div>
+
+        <!-- Client logo strip — proof in faces -->
+        <div class="tbm-cases__logo-strip" style="left:760px; top:1320px;">
+          <img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/caterpillar.svg" alt="Caterpillar">
+          <img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/arcbest.svg" alt="ArcBest">
+          <img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/scottish-rite.svg" alt="Scottish Rite">
+          <img src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/logos/wellfit.svg" alt="Wellfit">
+        </div>
+
+        <!-- Quotes — italicized lines that live like graffiti -->
+        <div class="tbm-cases__quote" style="left:740px;  top:380px;">"They show up before the cameras roll."</div>
+        <div class="tbm-cases__quote" style="left:80px;   top:780px;">"Three divisions. One cinematic system. Scaled."</div>
+        <div class="tbm-cases__quote" style="left:1620px; top:840px;">"Strategy first. Cameras second."</div>
+        <div class="tbm-cases__quote" style="left:2080px; top:300px;">"Loud beats safe. Every single time."</div>
+
+        <!-- Customer reviews — real testimonials, scattered like Google review cards on the floor -->
+        <div class="tbm-cases__review" style="left:660px;  top:870px;">
+          <div class="stars">★★★★★</div>
+          <p class="text">"The team exceeded my expectations and truly were a pleasure to work with. We're on our second video and I flew them out to Miami because I want them to exclusively produce all of our content."</p>
+          <div class="author">Client testimonial · Direct review</div>
+        </div>
+        <div class="tbm-cases__review" style="left:1700px; top:480px;">
+          <div class="stars">★★★★★</div>
+          <p class="text">"This video has opened doors for us, not only with new customers, but with vendors too. It has given us credibility and set us apart from our competition."</p>
+          <div class="author">Jeff Biggars · Biggar Hat Store</div>
+        </div>
+        <div class="tbm-cases__review" style="left:1340px; top:1100px;">
+          <div class="stars">★★★★★</div>
+          <p class="text">"You get so much more than just a video. You get a team that is invested in your success. You get a true partnership."</p>
+          <div class="author">Healthcare fundraising consultant</div>
+        </div>
+        <div class="tbm-cases__review" style="left:280px;  top:380px;">
+          <div class="stars">★★★★★</div>
+          <p class="text">"They didn't shoot what we asked for. They shot what we needed. We'll never go anywhere else."</p>
+          <div class="author">Enterprise comms director · Fortune 500</div>
+        </div>
+      </div>
+    <div class="tbm-cases__cue" id="casesCue" aria-hidden="true">
+      <span class="tbm-cases__cue-label">Drag to explore</span>
+      <span class="tbm-cases__cue-sub">click + hold anywhere on the floor</span>
+    </div>
+  </div>
+</section>
+
+<div class="tbm-section-rule" aria-hidden="true">
+  <div><span class="dot"></span>TBM &mdash; 08 / HOW WE'RE DIFFERENT</div>
+  <div>SECTION 08 / 10 &middot; STICKY-NOTE PILLARS</div>
+</div>
+
+<!-- ============ SECTION 8: TBM DIFFERENCE / PILLARS ============ -->
+<section class="tbm-pillars" id="how-we-work">
+  <img class="tbm-sticker tbm-sticker--xxl tbm-sticker--wobble" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker11.png" alt="" style="top:-220px;right:3%;--rot:-8deg;--op:0.98;--w:460px;z-index:15">
+  <img class="tbm-sticker tbm-sticker--sm" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker4.png" alt="" style="bottom:6%;left:4%;--rot:15deg;--op:0.85">
+  <div class="tbm-pillars__inner">
+    <div class="tbm-pillars__head">
+      <div class="tbm-portfolio__eyebrow">● &nbsp; How we're different</div>
+      <h2 class="tbm-pillars__h2">Three reasons we don't get hired &mdash; <span class="y">and three we do.</span></h2>
+    </div>
+    <div class="tbm-pillars__grid">
+      <article class="tbm-pillar" data-pillar>
+        <div class="tbm-pillar__num">01</div>
+        <h3 class="tbm-pillar__heading">Strategy first. Cameras second.</h3>
+        <p class="tbm-pillar__body">Most agencies wait for a brief and press record. We show up before the cameras roll — auditing your audience, challenging your assumptions, and building the strategy that shapes the story. Scripted or unscripted, real people, real stakes.</p>
+      </article>
+      <article class="tbm-pillar" data-pillar>
+        <div class="tbm-pillar__num">02</div>
+        <h3 class="tbm-pillar__heading">Cinematic, every frame.</h3>
+        <p class="tbm-pillar__body">Every frame matters. High-end production quality regardless of budget — senior craftsmen from day one, not an intern running your shoot while the creative director's on another project. Cinematic in structure, pacing, emotion, and impact.</p>
+      </article>
+      <article class="tbm-pillar" data-pillar>
+        <div class="tbm-pillar__num">03</div>
+        <h3 class="tbm-pillar__heading">Senior team, every project.</h3>
+        <p class="tbm-pillar__body">We invest creative equity into every project like we have skin in the game. Fortune 500 or first swing at something bigger — you get the same team, the same standard, and the same refusal to ship anything safe.</p>
+      </article>
+    </div>
+    <div class="tbm-pillars__cta-row">
+      <a href="/how-we-work" class="tbm-pillars__cta" data-hot>How we work in detail <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 10: CLOSING CTA ============ -->
+<section class="tbm-closing" id="contact">
+  <img class="tbm-sticker tbm-sticker--xl tbm-sticker--wobble" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker10.png" alt="" style="top:8%;right:6%;--rot:14deg">
+  <img class="tbm-sticker tbm-sticker--md" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker3.png" alt="" style="bottom:14%;left:4%;--rot:-10deg;--op:0.95">
+  <div class="tbm-closing__inner">
+    <div class="tbm-portfolio__eyebrow" style="margin-bottom:24px">● &nbsp; Made it this far?</div>
+    <h2 class="tbm-closing__big">
+      Have something worth saying?<br>
+      Let's make it <span class="y">impossible</span><br>
+      to ignore<span class="o">.</span>
+    </h2>
+    <div class="tbm-closing__cta-row">
+      <div class="tbm-closing__alt">
+        Dallas &mdash; <a href="tel:+1" data-hot>(214) XXX-XXXX</a> &middot; <a href="mailto:hello@thinkbrandedmedia.com" data-hot>hello@thinkbrandedmedia.com</a>
+      </div>
+    </div>
+  </div>
+  <!-- The CTA itself, slapped onto the page like a sticker in the empty bottom-left -->
+  <a href="mailto:hello@thinkbrandedmedia.com?subject=Start a project" class="tbm-closing__sticker-cta" data-hot>
+    Start your project <span class="arr">→</span>
+  </a>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="tbm-footer">
+  <img class="tbm-sticker tbm-sticker--md" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker8.png" alt="" style="top:6%;right:6%;--rot:-8deg;--op:0.9">
+  <img class="tbm-sticker tbm-sticker--sm" src="https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/stickers/sticker11.png" alt="" style="bottom:10%;left:6%;--rot:11deg;--op:0.85">
+  <h3 class="tbm-footer__big">
+    <span class="outline">GOOD WORK</span><br>
+    <span class="y">OUTLIVES</span><br>
+    <span class="outline">THE BRIEF<span class="o">.</span></span>
+  </h3>
+  <div class="tbm-footer__cols">
+    <div class="tbm-footer__col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/ideation" data-hot>Ideation</a></li>
+        <li><a href="/services/commercial-production" data-hot>Commercials</a></li>
+        <li><a href="/services/brand-films" data-hot>Brand Films</a></li>
+        <li><a href="/services/b2b-video" data-hot>Corporate Video</a></li>
+        <li><a href="/services/always-on-content" data-hot>Always-On Content</a></li>
+        <li><a href="/services" data-hot>see all →</a></li>
+      </ul>
+    </div>
+    <div class="tbm-footer__col">
+      <h4>Industries We Serve</h4>
+      <ul>
+        <li><a href="/industries/industrial-heavy-equipment" data-hot>Industrial &amp; Heavy Eq.</a></li>
+        <li><a href="/industries/healthcare" data-hot>Healthcare</a></li>
+        <li><a href="/industries/construction" data-hot>Construction</a></li>
+        <li><a href="/industries/tech-saas" data-hot>Tech / SaaS</a></li>
+        <li><a href="/industries/energy" data-hot>Energy</a></li>
+        <li><a href="/industries/education" data-hot>Education</a></li>
+        <li><a href="/industries" data-hot>see all →</a></li>
+      </ul>
+    </div>
+    <div class="tbm-footer__col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about" data-hot>About</a></li>
+        <li><a href="/work" data-hot>Work</a></li>
+        <li><a href="/insights" data-hot>Insights</a></li>
+        <li><a href="/how-we-work" data-hot>How We Work</a></li>
+        <li><a href="/careers" data-hot>Careers</a></li>
+      </ul>
+    </div>
+    <div class="tbm-footer__col">
+      <h4>Contact</h4>
+      <p>Dallas HQ<br>1234 Camp Bowie Blvd<br>Dallas, TX 75201</p>
+      <p><a href="tel:+1" data-hot>(214) XXX-XXXX</a></p>
+      <p><a href="mailto:hello@thinkbrandedmedia.com" data-hot>hello@thinkbrandedmedia.com</a></p>
+    </div>
+  </div>
+  <div class="tbm-footer__bottom">
+    <div>© 2026 Think Branded Media · Made in Dallas, TX · Built for brands worth watching.</div>
+    <div>Real stories. Real people. Real results.</div>
+    <div><a href="#" class="secret" id="konamiHint" data-hot>↑↑↓↓←→←→BA</a></div>
+  </div>
+</footer>
+
+<script>
+/* ========== CINEMATIC LOADER ========== */
+(function() {
+  const loader = document.getElementById('loader'); if (!loader) return;
+  const bar = document.getElementById('loaderBar'); const num = document.getElementById('loaderNum');
+  let progress = 0;
+  const tick = () => {
+    progress = Math.min(progress + (Math.random() * 6 + 2), 100);
+    bar.style.setProperty('--progress', progress / 100);
+    num.textContent = String(Math.floor(progress)).padStart(3, '0');
+    if (progress < 100) setTimeout(tick, 28);
+    else setTimeout(() => loader.classList.add('is-done'), 240);
+  };
+  // Wait one frame for paint, then start
+  requestAnimationFrame(() => setTimeout(tick, 80));
+})();
+
+/* ========== CUSTOM CURSOR ========== */
+(function() {
+  if (matchMedia('(hover:none),(pointer:coarse)').matches) return;
+  const cursor = document.getElementById('cursor'); if (!cursor) return;
+  let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
+  document.addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; });
+  (function tick() {
+    cx += (x - cx) * 0.22; cy += (y - cy) * 0.22;
+    cursor.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`;
+    requestAnimationFrame(tick);
+  })();
+  document.querySelectorAll('[data-hot],a,button').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('is-hot'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('is-hot'));
+  });
+  document.addEventListener('click', e => {
+    const f = document.createElement('div'); f.className = 'tbm-click-flash';
+    f.style.left = e.clientX + 'px'; f.style.top = e.clientY + 'px';
+    document.body.appendChild(f); setTimeout(() => f.remove(), 600);
+  });
+})();
+
+/* ========== CLOCK (CT) ========== */
+(function() {
+  const el = document.getElementById('clock'); if (!el) return;
+  function u() {
+    const t = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+    el.textContent = t + ' CT';
+  }
+  u(); setInterval(u, 30000);
+})();
+
+/* ========== CLICK-TO-PLAY HERO ========== */
+(function() {
+  const hero   = document.getElementById('hero');
+  const btn    = document.getElementById('playReelBtn');
+  const close  = document.getElementById('closePlayBtn');
+  const iframe = document.getElementById('heroIframe');
+  if (!hero || !btn || !iframe) return;
+
+  // Lazy-load the Vimeo Player SDK on first click so the page-load weight stays low.
+  let player = null, sdkLoading = null;
+  function ensurePlayer() {
+    if (player) return Promise.resolve(player);
+    if (sdkLoading) return sdkLoading;
+    sdkLoading = new Promise((resolve) => {
+      const init = () => { player = new Vimeo.Player(iframe); resolve(player); };
+      if (window.Vimeo && window.Vimeo.Player) { init(); return; }
+      const s = document.createElement('script');
+      s.src = 'https://player.vimeo.com/api/player.js';
+      s.onload = init;
+      document.head.appendChild(s);
+    });
+    return sdkLoading;
+  }
+
+  const enter = async () => {
+    hero.classList.add('tbm-hero--playing');
+    document.addEventListener('keydown', esc);
+    addEventListener('scroll', sc, { passive: true, once: true });
+    // Unmute the existing loop in place — no iframe reload, video keeps playing seamlessly.
+    const p = await ensurePlayer();
+    try { await p.setVolume(1); await p.setMuted(false); } catch (e) { /* SDK call swallowed */ }
+  };
+  const exit = async () => {
+    hero.classList.remove('tbm-hero--playing');
+    document.removeEventListener('keydown', esc);
+    if (player) { try { await player.setMuted(true); } catch (e) {} }
+  };
+  const esc = e => { if (e.key === 'Escape') exit(); };
+  const sc  = () => { if (hero.classList.contains('tbm-hero--playing')) exit(); };
+  btn.addEventListener('click', enter);
+  if (close) close.addEventListener('click', exit);
+})();
+
+/* ========== SUB-HERO CHAOS TYPE — wrap every letter in a span with a random font, re-roll on hover ========== */
+(function() {
+  const sec = document.getElementById('sub-hero'); if (!sec) return;
+  const chaos = sec.querySelector('.tbm-sub-hero__chaos');
+
+  const FONT_COUNT = 13;
+  function randFont(exclude) {
+    let n;
+    do { n = 'f-' + (Math.floor(Math.random() * FONT_COUNT) + 1); } while (n === exclude);
+    return n;
+  }
+
+  // Walk the chaos block and wrap every printable character in <span class="ch f-N">.
+  // Preserves <br> structure and inherits .seo-y from any <span data-seo> parent.
+  if (chaos) {
+    const children = Array.from(chaos.childNodes);
+    chaos.innerHTML = '';
+    function processNode(node, isSeo) {
+      if (node.nodeType === 3) {
+        // Text node — split into character spans
+        const text = node.nodeValue;
+        for (let i = 0; i < text.length; i++) {
+          const ch = text[i];
+          if (ch === ' ' || ch === '\n' || ch === '\t') {
+            chaos.appendChild(document.createTextNode(ch));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'ch ' + randFont() + (isSeo ? ' seo-y' : '');
+            span.textContent = ch;
+            chaos.appendChild(span);
+          }
+        }
+      } else if (node.nodeType === 1) {
+        if (node.tagName === 'BR') {
+          chaos.appendChild(document.createElement('br'));
+        } else if (node.hasAttribute && node.hasAttribute('data-seo')) {
+          // Process inner children with SEO flag on
+          node.childNodes.forEach(c => processNode(c, true));
+        } else {
+          node.childNodes.forEach(c => processNode(c, isSeo));
+        }
+      }
+    }
+    children.forEach(n => processNode(n, false));
+
+    // Hover handler: re-roll to a different random font when cursor enters a letter
+    chaos.addEventListener('mouseover', (e) => {
+      const target = e.target;
+      if (!target.classList || !target.classList.contains('ch')) return;
+      const cur = Array.from(target.classList).find(c => c.startsWith('f-'));
+      if (cur) {
+        target.classList.remove(cur);
+        target.classList.add(randFont(cur));
+      }
+    });
+  }
+
+  // Entrance trigger
+  function tryFire() {
+    const r = sec.getBoundingClientRect();
+    if (r.top < innerHeight * 0.85 && r.bottom > 0) {
+      sec.classList.add('is-in');
+      return true;
+    }
+    return false;
+  }
+  if (!tryFire()) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          sec.classList.add('is-in');
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    io.observe(sec);
+  }
+})();
+
+/* ========== HERO META COLLISION FADE — single continuous distance formula, no branches ========== */
+(function() {
+  const meta = document.querySelector('.tbm-hero__meta');
+  const cta  = document.querySelector('.tbm-hero__cta-row');
+  if (!meta || !cta) return;
+
+  const FADE_OVER = 120;  // px of safety clearance for full opacity; <= 0 = fully hidden
+  let scheduled = false;
+
+  function update() {
+    scheduled = false;
+    const c = cta.getBoundingClientRect();
+    const m = meta.getBoundingClientRect();
+
+    // Per-axis clearance: positive = rects are apart on this axis; negative = they overlap on this axis.
+    // Two rects only collide if BOTH axes overlap (both clearances <= 0).
+    const xClearance = Math.max(c.left - m.right, m.left - c.right);
+    const yClearance = Math.max(c.top  - m.bottom, m.top  - c.bottom);
+
+    // "Safety" = the axis with the most breathing room — that's what prevents collision.
+    // If either axis has lots of clearance, we're safe and meta should be fully visible.
+    const safety = Math.max(xClearance, yClearance);
+
+    // Single continuous map: safety >= FADE_OVER → 1, safety <= 0 → 0, linear between.
+    // This gives a smooth fade as you drag the window — no branch jumps.
+    const op = Math.max(0, Math.min(1, safety / FADE_OVER));
+    meta.style.setProperty('--meta-opacity', op.toFixed(3));
+  }
+  function schedule() {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(update);
+  }
+
+  update();
+  addEventListener('resize', schedule, { passive: true });
+  addEventListener('scroll', schedule, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(update);
+})();
+
+/* ========== SECTION 3 MANIFESTO — GSAP ScrollTrigger pin + scrub (matches autonomous pattern) ========== */
+(function() {
+  const section = document.getElementById('positioning'); if (!section) return;
+  const h = document.getElementById('manifestoCopy'); if (!h) return;
+  // Build word spans from data-manifesto JSON
+  let words = [];
+  try { words = JSON.parse(h.getAttribute('data-manifesto') || '[]'); }
+  catch (e) { return; }
+  if (!words.length) return;
+  h.innerHTML = '';
+  const tokens = words.map((w, i) => {
+    const span = document.createElement('span');
+    span.className = 'tbm-mword' + (w.mark === 'hot' ? ' is-hot' : (w.mark === 'orange' ? ' is-orange' : ''));
+    span.textContent = w.t;
+    h.appendChild(span);
+    if (i < words.length - 1) h.appendChild(document.createTextNode(' '));
+    return span;
+  });
+
+  // True scroll-pin via GSAP ScrollTrigger (matches autonomous-website inspiration).
+  // Section pins at top, scroll wheel advances the word reveal, section releases only
+  // after all words lit + brief hold. Honors prefers-reduced-motion (instant-reveal fallback).
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !window.gsap || !window.ScrollTrigger) {
+    // Fallback: light all words immediately, no pin
+    tokens.forEach(t => t.classList.add('is-lit'));
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+  const wordCount = tokens.length;
+  // 80px per word + 600px tail-hold = comfortable read-through pace
+  const pinDistance = wordCount * 80 + 600;
+
+  ScrollTrigger.create({
+    trigger: section,
+    start: 'top top',
+    end: '+=' + pinDistance,
+    pin: true,
+    pinSpacing: true,
+    scrub: 0.6,
+    anticipatePin: 1,
+    onUpdate: (self) => {
+      // Map progress 0→1 across pinDistance to word reveal.
+      // 0→0.82 lights words; 0.82→1 holds all lit (the "read pause" tail).
+      const revealEnd = 0.82;
+      const adjusted = Math.min(1, self.progress / revealEnd);
+      const targetIndex = Math.ceil(adjusted * wordCount);
+      tokens.forEach((el, i) => el.classList.toggle('is-lit', i < targetIndex));
+    }
+  });
+})();
+
+/* ========== BTS POLAROID STACK — random photos from pool, ambient auto-shuffle ========== */
+(function() {
+  const stack = document.querySelector('[data-bts-stack]');
+  if (!stack) return;
+  const cards = stack.querySelectorAll('.tbm-bts-card');
+  if (!cards.length) return;
+
+  // BTS photo pool — add more by dropping JPGs in /bts/ and extending this list.
+  // For production: replace with a fetch() of /bts/manifest.json or move to a CDN.
+  const POOL = [
+    "https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/313A7406.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/313A7419.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/313A7458.jpg",
+    "https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/313A7459.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/313A7462.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/313A7465.jpg",
+    "https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/313A7484.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A7430.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A7434.jpg",
+    "https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A7466.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A7473.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A7497.jpg",
+    "https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A7500.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A8194.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A8201.jpg",
+    "https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A8426.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A8429.jpg","https://cdn.jsdelivr.net/gh/johny-tbm/tbm-cdn@main/bts/4S2A8449.jpg"
+  ];
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  // Initial fill — N unique photos, one per slot
+  const initial = shuffle(POOL).slice(0, cards.length);
+  cards.forEach((card, i) => {
+    const img = card.querySelector('img');
+    img.src = initial[i];
+    card.dataset.currentSrc = initial[i];
+  });
+
+  // Ambient shuffle — every 3.8s, pick one random card + a photo not currently visible, fade-swap
+  let swapping = false;
+  function tick() {
+    if (swapping) return;
+    if (POOL.length <= cards.length) return; // not enough photos to swap
+    const idx = Math.floor(Math.random() * cards.length);
+    const card = cards[idx];
+    const currentSrcs = Array.from(cards).map(c => c.dataset.currentSrc);
+    const candidates = POOL.filter(p => !currentSrcs.includes(p));
+    if (!candidates.length) return;
+    const nextSrc = candidates[Math.floor(Math.random() * candidates.length)];
+
+    swapping = true;
+    const pre = new Image();
+    pre.onload = () => {
+      card.classList.add('is-fading');
+      setTimeout(() => {
+        const img = card.querySelector('img');
+        img.src = nextSrc;
+        card.dataset.currentSrc = nextSrc;
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          card.classList.remove('is-fading');
+          swapping = false;
+        }));
+      }, 500);
+    };
+    pre.onerror = () => { swapping = false; };
+    pre.src = nextSrc;
+  }
+
+  // Only run the shuffle when the section is in view — preserves performance + battery
+  let intervalId = null;
+  const section = document.getElementById('positioning-body') || stack.closest('section');
+  if (section && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting && !intervalId) {
+          intervalId = setInterval(tick, 3800);
+        } else if (!en.isIntersecting && intervalId) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      });
+    }, { threshold: 0.15 });
+    io.observe(section);
+  } else {
+    intervalId = setInterval(tick, 3800);
+  }
+})();
+
+/* ========== AOC DEVICE PILE — phones autoplay silently; iPad shows poster + play-to-start ========== */
+(function() {
+  const pile = document.querySelector('[data-aoc-pile]'); if (!pile) return;
+  const devices = pile.querySelectorAll('[data-aoc-device]');
+  if (!devices.length) return;
+
+  // PHONES: silent muted looping background videos, loaded on page ready, never touched again.
+  // Also inject the Instagram-style bottom nav bar into each phone's screen.
+  const MENUBAR_HTML = '<div class="tbm-aoc__phone-menubar" aria-hidden="true">' +
+    // Home
+    '<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></svg>' +
+    // Search
+    '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
+    // Reels (rectangle + play triangle)
+    '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="10 9 16 12 10 15" fill="currentColor" stroke="none"/></svg>' +
+    // Shop bag
+    '<svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>' +
+    // Profile pill
+    '<span class="profile"></span>' +
+  '</div>';
+
+  pile.querySelectorAll('.tbm-aoc__device--phone').forEach(d => {
+    const iframe = d.querySelector('[data-vimeo-slot]');
+    const url = d.getAttribute('data-aoc-video');
+    if (iframe && url) {
+      const sep = url.includes('?') ? '&' : '?';
+      iframe.src = url + sep + 'background=1&autoplay=1&muted=1&loop=1&dnt=1&playsinline=1';
+    }
+    const screen = d.querySelector('.tbm-aoc__device-screen');
+    if (screen && !screen.querySelector('.tbm-aoc__phone-menubar')) {
+      screen.insertAdjacentHTML('beforeend', MENUBAR_HTML);
+    }
+  });
+
+  // IPAD: starts with poster visible. First click loads + plays. Subsequent clicks toggle pause/play
+  // via Vimeo Player SDK (no iframe reload — video keeps its position).
+  const ipad = pile.querySelector('.tbm-aoc__device--ipad');
+  if (!ipad) return;
+
+  let sdkPromise = null;
+  function ensureVimeoSDK() {
+    if (sdkPromise) return sdkPromise;
+    sdkPromise = new Promise(resolve => {
+      if (window.Vimeo && window.Vimeo.Player) return resolve();
+      const s = document.createElement('script');
+      s.src = 'https://player.vimeo.com/api/player.js';
+      s.onload = resolve;
+      document.head.appendChild(s);
+    });
+    return sdkPromise;
+  }
+
+  let ipadPlayer = null;
+  let isPlaying = false;
+
+  ipad.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const iframe = ipad.querySelector('[data-vimeo-slot]');
+    const url = ipad.getAttribute('data-aoc-video');
+    if (!iframe || !url) return;
+
+    // First click: load the video (autoplay with sound). Set the playing state.
+    if (!ipadPlayer) {
+      const sep = url.includes('?') ? '&' : '?';
+      iframe.src = url + sep + 'autoplay=1&muted=0&loop=1&dnt=1&playsinline=1&controls=0';
+      ipad.classList.add('is-playing');
+      isPlaying = true;
+      await ensureVimeoSDK();
+      ipadPlayer = new Vimeo.Player(iframe);
+      return;
+    }
+
+    // Subsequent clicks: toggle pause/play in place — no reload.
+    try {
+      if (isPlaying) {
+        await ipadPlayer.pause();
+        ipad.classList.remove('is-playing');
+        ipad.classList.add('is-paused');
+        isPlaying = false;
+      } else {
+        await ipadPlayer.play();
+        ipad.classList.remove('is-paused');
+        ipad.classList.add('is-playing');
+        isPlaying = true;
+      }
+    } catch (_) {}
+  });
+})();
+
+/* ========== MAGNETIC FREE-FLOAT — cursor-attracted, drifts in place, no spring back ========== */
+(function() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (matchMedia('(hover: none)').matches) return;
+
+  // Each magnet group has its OWN mouse tracker so cursor in one section doesn't tug elements in another.
+  function applyMagnet(elements, container, opts) {
+    elements = Array.from(elements);
+    if (!elements.length || !container) return;
+    const reach = opts.reach || 360;       // px — how close the cursor needs to be
+    const force = opts.force || 0.6;       // px / frame² — acceleration applied near the cursor
+    const damp  = opts.damp  || 0.88;      // velocity decay per frame (high → heavy & floaty)
+    const cap   = opts.cap   || 220;       // px — soft drift limit; gentle pull-back beyond this
+    const capStiff = 0.012;
+
+    const state = elements.map(() => ({ x:0, y:0, vx:0, vy:0 }));
+    let mx = -9999, my = -9999, active = false;
+    container.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; active = true; });
+    container.addEventListener('mouseleave', () => { active = false; });
+
+    function step() {
+      elements.forEach((el, i) => {
+        const s = state[i];
+        let fx = 0, fy = 0;
+        if (active) {
+          const r = el.getBoundingClientRect();
+          const cx = r.left + r.width  / 2;
+          const cy = r.top  + r.height / 2;
+          const dx = mx - cx;
+          const dy = my - cy;
+          const dist = Math.hypot(dx, dy) || 1;
+          if (dist < reach) {
+            const k = Math.pow(1 - dist / reach, 1.6);
+            fx = (dx / dist) * force * k;
+            fy = (dy / dist) * force * k;
+          }
+        }
+        // Soft drift cap — kicks in only past `cap` px so the element doesn't fly away.
+        // No spring-back to origin while inside the cap → genuine free floating.
+        const drift = Math.hypot(s.x, s.y);
+        if (drift > cap) {
+          const over = drift - cap;
+          fx -= (s.x / drift) * over * capStiff;
+          fy -= (s.y / drift) * over * capStiff;
+        }
+        s.vx = (s.vx + fx) * damp;
+        s.vy = (s.vy + fy) * damp;
+        s.x += s.vx;
+        s.y += s.vy;
+        el.style.setProperty('--magnet-x', s.x.toFixed(2) + 'px');
+        el.style.setProperty('--magnet-y', s.y.toFixed(2) + 'px');
+      });
+      requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // What We Build cards
+  const offer = document.getElementById('services');
+  if (offer) applyMagnet(offer.querySelectorAll('.tbm-offer__card'), offer, { reach: 360, force: 0.55, damp: 0.88, cap: 200 });
+
+  // Start your project sticker (same physics, slightly bigger reach since it's a single big target)
+  const closing = document.getElementById('contact');
+  const sticker = closing && closing.querySelector('.tbm-closing__sticker-cta');
+  if (sticker) applyMagnet([sticker], closing, { reach: 480, force: 0.7, damp: 0.88, cap: 240 });
+})();
+
+/* ========== STUDIO FLOOR — Case Studies pan with inertia ========== */
+(function() {
+  const canvas = document.getElementById('casesCanvas'); if (!canvas) return;
+  const world  = document.getElementById('casesWorld');  if (!world)  return;
+  const cue    = document.getElementById('casesCue');
+
+  let panX = 0, panY = 0;          // current pan offset
+  let vX = 0, vY = 0;              // last-frame velocity for inertia
+  let isDown = false, sx = 0, sy = 0, bx = 0, by = 0;
+  let hasDragged = false;
+  let cueDismissed = false;
+  const DRAG_THRESHOLD = 6;
+
+  function dismissCue() {
+    if (cueDismissed || !cue) return;
+    cueDismissed = true;
+    cue.classList.add('is-dismissed');
+    setTimeout(() => cue && cue.parentNode && cue.parentNode.removeChild(cue), 500);
+  }
+  function applyPan() {
+    world.style.transform = 'translate(calc(-50% + ' + panX + 'px), calc(-50% + ' + panY + 'px))';
+  }
+  applyPan();
+
+  canvas.addEventListener('pointerdown', (e) => {
+    if (e.button !== undefined && e.button !== 0) return;
+    isDown = true; hasDragged = false;
+    sx = e.clientX; sy = e.clientY;
+    bx = panX; by = panY;
+    // Do NOT setPointerCapture here — that would redirect the click event off the case-study
+    // anchors and break their navigation on a tap. Capture is engaged below only on real drag.
+  });
+
+  canvas.addEventListener('pointermove', (e) => {
+    if (!isDown) return;
+    const dx = e.clientX - sx;
+    const dy = e.clientY - sy;
+    if (!hasDragged && (Math.abs(dx) > DRAG_THRESHOLD || Math.abs(dy) > DRAG_THRESHOLD)) {
+      hasDragged = true;
+      canvas.classList.add('dragging');
+      dismissCue();
+      try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
+    }
+    if (hasDragged) {
+      e.preventDefault();
+      panX = bx + dx;
+      panY = by + dy;
+      vX = e.movementX || 0;
+      vY = e.movementY || 0;
+      applyPan();
+    }
+  });
+
+  function endDrag(e) {
+    if (!isDown) return;
+    isDown = false;
+    canvas.classList.remove('dragging');
+    try { canvas.releasePointerCapture(e.pointerId); } catch (_) {}
+    if (hasDragged) {
+      const step = () => {
+        vX *= 0.92; vY *= 0.92;
+        panX += vX; panY += vY;
+        applyPan();
+        if (Math.abs(vX) + Math.abs(vY) > 0.3) requestAnimationFrame(step);
+      };
+      step();
+    }
+    // Reset on next tick so the click-cancel handler can still see hasDragged === true
+    setTimeout(() => { hasDragged = false; }, 0);
+  }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+
+  // Capture-phase click cancel: if the user dragged, suppress the case-study link
+  canvas.addEventListener('click', (e) => {
+    if (hasDragged) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+
+  // Prevent native image drag from interfering
+  canvas.addEventListener('dragstart', (e) => e.preventDefault());
+})();
+
+/* ========== PILLARS ENTRANCE (Section 8) ========== */
+(function() {
+  const pills = document.querySelectorAll('[data-pillar]'); if (!pills.length) return;
+  function tryFire() {
+    pills.forEach(p => {
+      const r = p.getBoundingClientRect();
+      if (r.top < innerHeight * 0.85 && r.bottom > 0) p.classList.add('is-in');
+    });
+  }
+  // Fire once on load if already in view, then IO for others
+  tryFire();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+  pills.forEach(p => io.observe(p));
+  // Also re-check on scroll (safety net)
+  addEventListener('scroll', tryFire, { passive: true });
+})();
+
+/* ========== PORTFOLIO DRAG SCROLL ========== */
+(function() {
+  const wrap = document.getElementById('portfolioScroll'); if (!wrap) return;
+  const cur = document.getElementById('portfolioCur');
+  const tiles = wrap.querySelectorAll('.tbm-portfolio__tile');
+  const DRAG_THRESHOLD = 6;
+  let down = false, startX = 0, startScroll = 0, hasDragged = false, activePointer = null;
+
+  function onPointerDown(e) {
+    if (e.button !== undefined && e.button !== 0) return;
+    down = true;
+    hasDragged = false;
+    startX = e.clientX;
+    startScroll = wrap.scrollLeft;
+    activePointer = e.pointerId;
+    // Do NOT call setPointerCapture here. Capture on pointerdown redirects the
+    // subsequent pointerup + click events to wrap, so the click never reaches the
+    // tile button — its onclick (and the delegated handler, which uses
+    // e.target.closest('.tbm-portfolio__tile')) never fires. Capture is engaged
+    // below in onPointerMove only after real drag movement is detected.
+  }
+  function onPointerMove(e) {
+    if (!down || (activePointer !== null && e.pointerId !== activePointer)) return;
+    const dx = e.clientX - startX;
+    if (!hasDragged && Math.abs(dx) > DRAG_THRESHOLD) {
+      hasDragged = true;
+      wrap.classList.add('is-dragging');
+      // Engage pointer capture now that we know this is a drag, so move/up events
+      // keep flowing even if the pointer leaves the wrap mid-drag.
+      try { wrap.setPointerCapture(e.pointerId); } catch (_) {}
+    }
+    if (hasDragged) {
+      e.preventDefault();
+      wrap.scrollLeft = startScroll - dx * 1.5;
+    }
+  }
+  function onPointerUp(e) {
+    if (!down) return;
+    down = false;
+    wrap.classList.remove('is-dragging');
+    try { wrap.releasePointerCapture(e.pointerId); } catch (_) {}
+    activePointer = null;
+    // Reset hasDragged after a tick so the upcoming click handler sees the right value
+    setTimeout(() => { hasDragged = false; }, 0);
+  }
+  // Capture-phase click cancel: if we dragged, suppress the link navigation
+  function onClickCapture(e) {
+    if (hasDragged) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }
+  wrap.addEventListener('pointerdown', onPointerDown);
+  wrap.addEventListener('pointermove', onPointerMove);
+  wrap.addEventListener('pointerup', onPointerUp);
+  wrap.addEventListener('pointercancel', onPointerUp);
+  wrap.addEventListener('click', onClickCapture, true);
+  // Also prevent native drag-image of any child <img> if present
+  wrap.addEventListener('dragstart', e => e.preventDefault());
+
+  // Counter update
+  wrap.addEventListener('scroll', () => {
+    const tileW = tiles[0]?.offsetWidth || 540;
+    const i = Math.min(tiles.length, Math.floor((wrap.scrollLeft + tileW / 2) / tileW) + 1);
+    if (cur) cur.textContent = String(i).padStart(2, '0');
+  }, { passive: true });
+})();
+
+/* ========== KONAMI CODE EASTER EGG ========== */
+(function() {
+  const seq = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+  let buf = [];
+  document.addEventListener('keydown', e => {
+    buf.push(e.key.length === 1 ? e.key.toLowerCase() : e.key);
+    if (buf.length > seq.length) buf.shift();
+    if (buf.length === seq.length && seq.every((k, i) => k === buf[i])) {
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'position:fixed;inset:0;z-index:99999;background:rgba(11,11,11,0.95);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-style:italic;font-size:clamp(72px,12vw,200px);color:#FFD500;text-transform:uppercase;letter-spacing:-0.02em;';
+      overlay.textContent = 'TITLE!';
+      document.body.appendChild(overlay);
+      setTimeout(() => overlay.remove(), 3500);
+    }
+  });
+})();
+
+/* WORK MODAL init was moved out into its own <script> tag after the <dialog> element below — see end of body */
+/* (kept this comment as a breadcrumb in case anyone wonders where it went) */
+function __workModalMoved() {}
+/* Original work modal init begin (now in a separate script tag, kept as commented dead code so we can revert easily) */
+function __unused__initWorkModal() {
+  const PROJECT_VIDEOS = {
+    'beef': {
+      title: "Beef. It's What's For Dinner.",
+      videos: [
+        'https://player.vimeo.com/video/935676737',
+        'https://player.vimeo.com/video/935599846'
+      ]
+    },
+    'caterpillar': { title: 'Caterpillar', videos: [] },
+    'psychica': {
+      title: 'Psychica',
+      videos: [
+        'https://player.vimeo.com/video/1124334546?h=3a47d441db',
+        'https://player.vimeo.com/video/1124334763?h=435856e9c9',
+        'https://player.vimeo.com/video/1124334897?h=051f5fc1de',
+        'https://player.vimeo.com/video/1124335016?h=0c16401ae9',
+        'https://player.vimeo.com/video/1124335064?h=99c14e6398'
+      ]
+    },
+    'angel-reyes': {
+      title: 'Angel Reyes',
+      videos: [
+        'https://player.vimeo.com/video/1081508801',
+        'https://player.vimeo.com/video/1081508634',
+        'https://player.vimeo.com/video/1081507908'
+      ]
+    },
+    'scottish-rite': {
+      title: 'Scottish Rite',
+      videos: ['https://player.vimeo.com/video/1194516720']
+    },
+    'circle-o': {
+      title: 'Circle O',
+      videos: ['https://player.vimeo.com/video/1055436355']
+    },
+    'rahman': {
+      title: 'Rahman',
+      videos: ['https://player.vimeo.com/video/1096640627?h=942df4a0cc']
+    },
+    'gq': { title: 'GQ / Condé Nast', videos: [] },
+    'arcbest': {
+      title: 'ArcBest',
+      videos: [
+        'https://player.vimeo.com/video/1048633044',
+        'https://player.vimeo.com/video/1048633583',
+        'https://player.vimeo.com/video/1048636613'
+      ]
+    }
+  };
+
+  const modal = document.getElementById('workModal'); if (!modal) return;
+  const iframe = modal.querySelector('.tbm-work-modal__iframe');
+  const closeBtn = modal.querySelector('.tbm-work-modal__close');
+  const prevBtn = modal.querySelector('.tbm-work-modal__prev');
+  const nextBtn = modal.querySelector('.tbm-work-modal__next');
+  const counter = modal.querySelector('.tbm-work-modal__counter');
+  const controls = modal.querySelector('.tbm-work-modal__controls');
+  const titleEl = modal.querySelector('.tbm-work-modal__title');
+  const ctaEl = modal.querySelector('.tbm-work-modal__cta');
+
+  let currentVideos = [];
+  let currentIndex = 0;
+
+  function loadVideo(index) {
+    if (!currentVideos[index]) return;
+    const url = currentVideos[index];
+    const sep = url.includes('?') ? '&' : '?';
+    iframe.src = `${url}${sep}autoplay=1&dnt=1&playsinline=1`;
+    currentIndex = index;
+    counter.textContent = `${String(index + 1).padStart(2,'0')} / ${String(currentVideos.length).padStart(2,'0')}`;
+  }
+
+  function openModal(slug) {
+    const data = PROJECT_VIDEOS[slug];
+    if (!data || !data.videos.length) return false;
+    currentVideos = data.videos;
+    titleEl.textContent = data.title;
+    ctaEl.href = `/work/${slug}`;
+    controls.classList.toggle('has-multi', currentVideos.length > 1);
+    loadVideo(0);
+    if (typeof modal.showModal === 'function') modal.showModal();
+    else modal.setAttribute('open', '');
+    return true;
+  }
+
+  function closeModal() {
+    iframe.src = 'about:blank';   // hard-stop the audio/video
+    if (typeof modal.close === 'function') modal.close();
+    else modal.removeAttribute('open');
+  }
+
+  // Intercept tile clicks
+  document.querySelectorAll('.tbm-portfolio__tile').forEach(tile => {
+    tile.addEventListener('click', (e) => {
+      const href = tile.getAttribute('href') || '';
+      const m = href.match(/\/work\/([^/?#]+)/);
+      if (!m) return;
+      const opened = openModal(m[1]);
+      if (opened) e.preventDefault();
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  prevBtn.addEventListener('click', () => loadVideo((currentIndex - 1 + currentVideos.length) % currentVideos.length));
+  nextBtn.addEventListener('click', () => loadVideo((currentIndex + 1) % currentVideos.length));
+
+  // Click on backdrop (outside .tbm-work-modal__inner) closes
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Keyboard left/right
+  document.addEventListener('keydown', (e) => {
+    if (!modal.hasAttribute('open')) return;
+    if (e.key === 'ArrowLeft' && controls.classList.contains('has-multi')) prevBtn.click();
+    if (e.key === 'ArrowRight' && controls.classList.contains('has-multi')) nextBtn.click();
+  });
+
+  // Native <dialog> close event (ESC key) — clear iframe so audio stops
+  modal.addEventListener('close', () => { iframe.src = 'about:blank'; });
+}
+/* (Original modal init no longer called — see new <script> block below the dialog) */
+</script>
+
+<!-- WORK MODAL — Vimeo player overlay with carousel for projects that have multiple videos -->
+<!-- Plain div overlay instead of <dialog> — eliminates top-layer sizing quirks and showModal() failures -->
+<div id="workModal" class="tbm-work-modal" role="dialog" aria-modal="true" aria-label="Project video" style="display:none;position:fixed;inset:0;width:100vw;height:100vh;z-index:99999;background:rgba(8,8,8,0.94);align-items:center;justify-content:center;flex-direction:column;gap:24px;padding:60px 24px 24px;">
+  <button class="tbm-work-modal__close" type="button" aria-label="Close" data-hot style="position:absolute;top:24px;right:24px;width:48px;height:48px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:50%;color:#fff;font-size:24px;cursor:pointer;">&times;</button>
+  <div class="tbm-work-modal__video" style="position:relative;width:min(1280px,92vw);aspect-ratio:16/9;background:#000;box-shadow:0 50px 100px -20px rgba(0,0,0,0.7);">
+    <iframe class="tbm-work-modal__iframe"
+      allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+      allowfullscreen
+      title="Project video"
+      style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
+  </div>
+  <div class="tbm-work-modal__controls" aria-label="Video carousel controls" style="display:none;align-items:center;gap:20px;">
+    <button class="tbm-work-modal__prev" type="button" aria-label="Previous video" data-hot style="width:44px;height:44px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);color:#fff;cursor:pointer;">&larr;</button>
+    <span class="tbm-work-modal__counter" style="font-family:monospace;font-size:12px;letter-spacing:0.3em;color:#aaa;min-width:80px;text-align:center;">01 / 01</span>
+    <button class="tbm-work-modal__next" type="button" aria-label="Next video" data-hot style="width:44px;height:44px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);color:#fff;cursor:pointer;">&rarr;</button>
+  </div>
+  <div class="tbm-work-modal__meta" style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:center;">
+    <h3 class="tbm-work-modal__title" style="font-family:var(--font-display,serif);font-style:italic;font-weight:900;font-size:24px;text-transform:uppercase;color:#fff;margin:0;">Project</h3>
+    <a class="tbm-work-modal__cta" href="#" data-hot style="display:inline-flex;align-items:center;gap:8px;background:#FFD500;color:#0B0B0B;font-family:var(--font-display,serif);font-style:italic;font-weight:900;font-size:14px;text-transform:uppercase;padding:12px 20px 9px;text-decoration:none;box-shadow:4px 4px 0 0 #0B0B0B;">See the case study <span>&rarr;</span></a>
+  </div>
+</div>
+
+<!-- Work modal init — isolated script block AFTER the <dialog> so the element is guaranteed to exist
+     and a JS error in the main script block above can't prevent this from running. -->
+<script>
+(function() {
+  const PROJECT_VIDEOS = {
+    'beef':         { title: "Beef. It's What's For Dinner.", videos: ['https://player.vimeo.com/video/935676737','https://player.vimeo.com/video/935599846'] },
+    'caterpillar':  { title: 'Caterpillar', videos: ['https://player.vimeo.com/video/1096696996?h=47a3dbd90c'] },
+    'psychica':     { title: 'Psychica', videos: ['https://player.vimeo.com/video/1124334546?h=3a47d441db','https://player.vimeo.com/video/1124334763?h=435856e9c9','https://player.vimeo.com/video/1124334897?h=051f5fc1de','https://player.vimeo.com/video/1124335016?h=0c16401ae9','https://player.vimeo.com/video/1124335064?h=99c14e6398'] },
+    'angel-reyes':  { title: 'Angel Reyes', videos: ['https://player.vimeo.com/video/1081508801','https://player.vimeo.com/video/1081508634','https://player.vimeo.com/video/1081507908'] },
+    'scottish-rite':{ title: 'Scottish Rite', videos: ['https://player.vimeo.com/video/1194516720'] },
+    'circle-o':     { title: 'Circle O', videos: ['https://player.vimeo.com/video/1055436355'] },
+    'rahman':       { title: 'Rahman', videos: ['https://player.vimeo.com/video/1096640627?h=942df4a0cc'] },
+    'gq':           { title: 'GQ / Condé Nast', videos: [] },
+    'arcbest':      { title: 'ArcBest', videos: ['https://player.vimeo.com/video/1048633044','https://player.vimeo.com/video/1048633583','https://player.vimeo.com/video/1048636613'] }
+  };
+
+  const modal = document.getElementById('workModal');
+  if (!modal) { console.warn('[work-modal] dialog#workModal not found'); return; }
+
+  const iframe  = modal.querySelector('.tbm-work-modal__iframe');
+  const closeBtn= modal.querySelector('.tbm-work-modal__close');
+  const prevBtn = modal.querySelector('.tbm-work-modal__prev');
+  const nextBtn = modal.querySelector('.tbm-work-modal__next');
+  const counter = modal.querySelector('.tbm-work-modal__counter');
+  const controls= modal.querySelector('.tbm-work-modal__controls');
+  const titleEl = modal.querySelector('.tbm-work-modal__title');
+  const ctaEl   = modal.querySelector('.tbm-work-modal__cta');
+
+  let currentVideos = [];
+  let currentIndex = 0;
+
+  function loadVideo(index) {
+    if (!currentVideos[index]) return;
+    const url = currentVideos[index];
+    const sep = url.includes('?') ? '&' : '?';
+    iframe.src = url + sep + 'autoplay=1&dnt=1&playsinline=1';
+    currentIndex = index;
+    counter.textContent = String(index + 1).padStart(2,'0') + ' / ' + String(currentVideos.length).padStart(2,'0');
+  }
+
+  function openModal(slug) {
+    const data = PROJECT_VIDEOS[slug];
+    if (!data || !data.videos.length) {
+      location.href = '/work/' + slug;
+      return false;
+    }
+    currentVideos = data.videos;
+    titleEl.textContent = data.title;
+    ctaEl.href = '/work/' + slug;
+    // Show/hide carousel controls based on video count
+    controls.style.display = currentVideos.length > 1 ? 'inline-flex' : 'none';
+    loadVideo(0);
+    // Show the overlay div via display:flex (was display:none)
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';   // lock background scroll
+    return true;
+  }
+  window.openWorkModal = openModal;
+
+  function closeModal() {
+    iframe.src = 'about:blank';
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Tiles are <button>s now (no native navigation) — read data-href, route to modal,
+  // or manually navigate for projects without videos.
+  document.addEventListener('click', function(e) {
+    const tile = e.target.closest && e.target.closest('.tbm-portfolio__tile');
+    if (!tile) return;
+    const scroller = document.getElementById('portfolioScroll');
+    if (scroller && scroller.classList.contains('is-dragging')) return;
+    const href = tile.getAttribute('data-href') || '';
+    const m = href.match(/\/work\/([^/?#]+)/);
+    if (!m) return;
+    const slug = m[1];
+    console.log('[work-modal] tile clicked:', slug);
+    const data = PROJECT_VIDEOS[slug];
+    if (!data || !data.videos.length) {
+      location.href = href;   // manual nav for projects without videos
+      return;
+    }
+    openModal(slug);
+  }, false);
+
+  closeBtn.addEventListener('click', closeModal);
+  prevBtn.addEventListener('click', function() { loadVideo((currentIndex - 1 + currentVideos.length) % currentVideos.length); });
+  nextBtn.addEventListener('click', function() { loadVideo((currentIndex + 1) % currentVideos.length); });
+
+  // Backdrop-click-to-close DISABLED for now — close via the × button or ESC instead.
+  // (Was: modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  //  this was firing on the same click that OPENED the modal in some flows, snapping it shut.)
+
+  document.addEventListener('keydown', function(e) {
+    if (modal.style.display !== 'flex') return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft' && currentVideos.length > 1) prevBtn.click();
+    if (e.key === 'ArrowRight' && currentVideos.length > 1) nextBtn.click();
+  });
+
+  // Backdrop click → close (only when clicking the dark overlay itself, not the inner content)
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeModal();
+  });
+
+  console.log('[work-modal] ready (div overlay), %d projects wired', Object.keys(PROJECT_VIDEOS).length);
+})();
+</script>
+</body>
+</html>
