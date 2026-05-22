@@ -1383,10 +1383,10 @@ h1,h2,h3,h4 {
 .tbm-offer__head { max-width: 1280px; margin: 0 auto var(--space-8); display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; position: relative; z-index: 1; }
 .tbm-offer__h2 {
   font-family: var(--font-display); font-weight: 900; font-style: italic;
-  font-size: var(--fs-h2); line-height: 0.9;
-  text-transform: uppercase; letter-spacing: -0.015em;
+  font-size: clamp(64px, 8.5vw, 144px); line-height: 0.9;
+  text-transform: uppercase; letter-spacing: -0.02em;
   padding: 0.08em 0.06em; margin: 0 0 var(--space-5);
-  text-wrap: balance; max-width: 900px;
+  text-wrap: balance; max-width: 1100px;
   color: var(--tbm-master-black);
 }
 .tbm-offer__h2 .y { background: var(--tbm-master-black); color: var(--tbm-impact-yellow); padding: 0 0.12em; }
