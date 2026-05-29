@@ -3834,6 +3834,54 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
   if (sticker) applyMagnet([sticker], closing, { mode: 'follow', stiffness: 0.12, damp: 0.78 });
 })();
 
+/* ========== CTA PHRASE CYCLER — the sticker's copy gets pushier the longer you linger ========== */
+(function() {
+  const cta = document.querySelector('.tbm-closing__sticker-cta');
+  if (!cta) return;
+
+  // Phrases progress from polite professional → cheeky → impatient → command.
+  // Pair: [phrase, ms-to-show-before-rotating]
+  const phrases = [
+    ['Start your project',     6500],
+    ["Yeah. Click it.",        3200],
+    ["Don't be shy.",          3000],
+    ["We don't bite.",         3000],
+    ["C'mon. Make a move.",    3200],
+    ['Quit lurking.',          3000],
+    ['Stop scrolling. Click.', 3400],
+    ['Send it. Yesterday.',    3800]
+  ];
+
+  // Rebuild the inner markup so the text + arrow are each in their own element we can animate.
+  cta.innerHTML =
+    '<span class="tbm-cta-cycle">' + phrases[0][0] + '</span> ' +
+    '<span class="arr">&rarr;</span>';
+  const txt = cta.querySelector('.tbm-cta-cycle');
+  txt.style.display = 'inline-block';
+  txt.style.transition = 'opacity 260ms ease, transform 320ms cubic-bezier(0.4,0,0.2,1)';
+  txt.style.willChange = 'opacity, transform';
+
+  let idx = 0;
+  function tick() {
+    const upcoming = (idx + 1) % phrases.length;
+    // Out: fade up + away
+    txt.style.opacity = '0';
+    txt.style.transform = 'translateY(-8px)';
+    setTimeout(() => {
+      // Swap copy while invisible, prep entry pose
+      txt.textContent = phrases[upcoming][0];
+      txt.style.transform = 'translateY(10px)';
+      // Force a layout flush so the in-state transitions instead of snapping
+      void txt.offsetHeight;
+      txt.style.opacity = '1';
+      txt.style.transform = 'translateY(0)';
+      idx = upcoming;
+      setTimeout(tick, phrases[idx][1]);
+    }, 280);
+  }
+  setTimeout(tick, phrases[0][1]);
+})();
+
 /* ========== STUDIO FLOOR — Case Studies pan with inertia ========== */
 (function() {
   const canvas = document.getElementById('casesCanvas'); if (!canvas) return;
