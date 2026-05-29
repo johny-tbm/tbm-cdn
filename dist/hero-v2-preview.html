@@ -3761,14 +3761,21 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
   if (matchMedia('(hover: none)').matches) return;
 
   // Each magnet group has its OWN mouse tracker so cursor in one section doesn't tug elements in another.
+  // Two modes:
+  //   'attract' — weak nudge toward cursor that falls off with distance (default; the floaty card behaviour)
+  //   'follow'  — spring whose force is PROPORTIONAL to distance (the further away, the harder it pulls).
+  //               The element flings toward the cursor and tracks it around the section.
   function applyMagnet(elements, container, opts) {
     elements = Array.from(elements);
     if (!elements.length || !container) return;
-    const reach = opts.reach || 360;       // px — how close the cursor needs to be
-    const force = opts.force || 0.6;       // px / frame² — acceleration applied near the cursor
-    const damp  = opts.damp  || 0.88;      // velocity decay per frame (high → heavy & floaty)
-    const cap   = opts.cap   || 220;       // px — soft drift limit; gentle pull-back beyond this
-    const capStiff = 0.012;
+    const mode      = opts.mode      || 'attract';
+    const reach     = opts.reach     || 360;       // (attract) px — radius before the nudge engages
+    const force     = opts.force     || 0.6;       // (attract) px/frame² — peak acceleration near cursor
+    const stiffness = opts.stiffness || 0.06;      // (follow)  spring constant — k * distance = force
+    const damp      = opts.damp      || 0.88;      // velocity decay per frame
+    const cap       = opts.cap       || 220;       // (attract) soft drift limit so it doesn't fly away
+    const capStiff  = 0.012;
+    const useCap    = (mode !== 'follow');         // follow mode has no cap — chase the cursor anywhere
 
     const state = elements.map(() => ({ x:0, y:0, vx:0, vy:0 }));
     let mx = -9999, my = -9999, active = false;
@@ -3786,19 +3793,24 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
           const dx = mx - cx;
           const dy = my - cy;
           const dist = Math.hypot(dx, dy) || 1;
-          if (dist < reach) {
+          if (mode === 'follow') {
+            // Distance-proportional spring force — accelerates harder when far from the cursor
+            fx = dx * stiffness;
+            fy = dy * stiffness;
+          } else if (dist < reach) {
             const k = Math.pow(1 - dist / reach, 1.6);
             fx = (dx / dist) * force * k;
             fy = (dy / dist) * force * k;
           }
         }
-        // Soft drift cap — kicks in only past `cap` px so the element doesn't fly away.
-        // No spring-back to origin while inside the cap → genuine free floating.
-        const drift = Math.hypot(s.x, s.y);
-        if (drift > cap) {
-          const over = drift - cap;
-          fx -= (s.x / drift) * over * capStiff;
-          fy -= (s.y / drift) * over * capStiff;
+        if (useCap) {
+          // Soft drift cap — keeps attract-mode elements close to their layout slot.
+          const drift = Math.hypot(s.x, s.y);
+          if (drift > cap) {
+            const over = drift - cap;
+            fx -= (s.x / drift) * over * capStiff;
+            fy -= (s.y / drift) * over * capStiff;
+          }
         }
         s.vx = (s.vx + fx) * damp;
         s.vy = (s.vy + fy) * damp;
@@ -3812,14 +3824,14 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
     requestAnimationFrame(step);
   }
 
-  // What We Build cards
+  // What We Build cards — gentle float-toward-cursor in their grid positions
   const offer = document.getElementById('services');
   if (offer) applyMagnet(offer.querySelectorAll('.tbm-offer__card'), offer, { reach: 360, force: 0.55, damp: 0.88, cap: 200 });
 
-  // Start your project sticker (same physics, slightly bigger reach since it's a single big target)
+  // "Start your project" sticker — strong cursor-follow: flings to the cursor and tracks it around the section
   const closing = document.getElementById('contact');
   const sticker = closing && closing.querySelector('.tbm-closing__sticker-cta');
-  if (sticker) applyMagnet([sticker], closing, { reach: 480, force: 0.7, damp: 0.88, cap: 240 });
+  if (sticker) applyMagnet([sticker], closing, { mode: 'follow', stiffness: 0.12, damp: 0.78 });
 })();
 
 /* ========== STUDIO FLOOR — Case Studies pan with inertia ========== */
