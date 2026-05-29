@@ -3917,8 +3917,8 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
     setTimeout(() => quote.classList.remove('is-twitching'), 720);
   }
   function scheduleTwitch() {
-    // Random interval between 7 and 14 seconds so it never feels rhythmic
-    const wait = 7000 + Math.random() * 7000;
+    // Random interval between 3.5 and 7 seconds — twice as frequent as before, still non-rhythmic
+    const wait = 3500 + Math.random() * 3500;
     setTimeout(() => { twitch(); scheduleTwitch(); }, wait);
   }
   // Hold off the first twitch for a few seconds so the page can land first
@@ -3934,7 +3934,7 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
   // Phrases progress from polite professional → cheeky → impatient → command.
   // Pair: [phrase, ms-to-show-before-rotating]
   const phrases = [
-    ['Start your project',    10000],
+    ['Start your project',     6500],
     ["Yeah. Click it.",        3200],
     ["Don't be shy.",          3000],
     ["We don't bite.",         3000],
