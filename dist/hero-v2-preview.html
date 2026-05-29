@@ -64,20 +64,30 @@ h1,h2,h3,h4 {
   position: fixed; inset: 0; z-index: 9000;
   background: #060606;
   overflow: hidden;
-  transition: opacity 900ms cubic-bezier(0.4,0,0.2,1);
+  /* Default state: full coverage */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition:
+    opacity   1100ms cubic-bezier(0.7,0,0.2,1),
+    clip-path 1100ms cubic-bezier(0.7,0,0.2,1);
 }
 .tbm-brain.is-done {
+  /* Pull-up reveal (like the old cinematic loader): clip the overlay to a zero-height strip at the top */
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   opacity: 0;
   pointer-events: none;
 }
-/* 3D canvas + photo-real fallback layered into a centered square */
+/* 3D canvas + photo-real fallback layered into a centered square — scales down as the overlay pulls up */
 .tbm-brain__pix {
   position: absolute;
   left: 50%; top: 46%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 1100ms cubic-bezier(0.7,0,0.2,1);
   width: clamp(360px, 70vh, 880px);
   height: clamp(360px, 70vh, 880px);
   pointer-events: none;
+}
+.tbm-brain.is-done .tbm-brain__pix {
+  transform: translate(-50%, -50%) scale(0.4);
 }
 .tbm-brain__pix .brain-3d {
   position: absolute; inset: 0;
@@ -4485,11 +4495,11 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
       }
       if (frame < ignitionFrames) requestAnimationFrame(ignitionLoop);
     })();
-    // Hold the flash briefly, then trigger the CSS opacity transition to fade overlay AWAY entirely
+    // Hold the flash briefly, then fire the synchronized opacity-fade + clip-path-pull-up + brain-scale-down
     setTimeout(() => {
       overlay.classList.add('is-done');
-      // After the transition completes (900ms), pull the element out of the DOM so it can never reappear
-      setTimeout(() => overlay.parentNode && overlay.parentNode.removeChild(overlay), 1100);
+      // After the 1100ms triple-transition completes, pull the element out of the DOM so it can never reappear
+      setTimeout(() => overlay.parentNode && overlay.parentNode.removeChild(overlay), 1300);
     }, 700);
   }
 
