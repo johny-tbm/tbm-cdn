@@ -1455,17 +1455,25 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
   background-position: center;
   background-size: cover;
 }
-.tbm-offer__head { max-width: 1280px; margin: 0 auto var(--space-8); display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; position: relative; z-index: 1; }
+/* z-index dropped so children (e.g. .tbm-offer__sub) can use mix-blend-mode against the section bg.
+   DOM order still ensures head paints over .tbm-offer__bg without needing an explicit stacking context. */
+.tbm-offer__head { max-width: 1280px; margin: 0 auto var(--space-8); display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap; position: relative; }
 .tbm-offer__h2 {
   font-family: var(--font-display); font-weight: 900; font-style: italic;
   font-size: clamp(64px, 8.5vw, 144px); line-height: 0.9;
   text-transform: uppercase; letter-spacing: -0.02em;
-  padding: 0.08em 0.06em; margin: 0 0 var(--space-5);
+  padding: 0.08em 0.06em; margin: -50px 0 var(--space-5);
   text-wrap: balance; max-width: 1100px;
   color: var(--tbm-master-black);
 }
 .tbm-offer__h2 .y { background: var(--tbm-master-black); color: var(--tbm-impact-yellow); padding: 0 0.12em; }
-.tbm-offer__sub { font-family: var(--font-body); font-size: clamp(15px,1.05vw,18px); color: var(--tbm-master-black); max-width: 700px; line-height: 1.55; margin: 0; opacity: 0.85; }
+/* Subhead reads against ANY background — white + mix-blend:difference inverts against the yellow bg AND the black brush-X */
+.tbm-offer__sub {
+  font-family: var(--font-body); font-size: clamp(15px,1.05vw,18px);
+  color: #fff;
+  mix-blend-mode: difference;
+  max-width: 700px; line-height: 1.55; margin: 0;
+}
 /* Eyebrow + view-all CTA contrast on yellow */
 .tbm-offer .tbm-portfolio__eyebrow { color: var(--tbm-master-black); }
 .tbm-offer .tbm-portfolio__cta { color: var(--tbm-master-black); border-bottom-color: var(--tbm-master-black); }
@@ -3834,15 +3842,16 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
   if (sticker) applyMagnet([sticker], closing, { mode: 'follow', stiffness: 0.12, damp: 0.78 });
 })();
 
-/* ========== CTA PHRASE CYCLER — the sticker's copy gets pushier the longer you linger ========== */
+/* ========== CTA PHRASE CYCLER — only starts rotating after the cursor first enters the closing section ========== */
 (function() {
   const cta = document.querySelector('.tbm-closing__sticker-cta');
-  if (!cta) return;
+  const closing = document.getElementById('contact');
+  if (!cta || !closing) return;
 
   // Phrases progress from polite professional → cheeky → impatient → command.
   // Pair: [phrase, ms-to-show-before-rotating]
   const phrases = [
-    ['Start your project',     6500],
+    ['Start your project',    10000],
     ["Yeah. Click it.",        3200],
     ["Don't be shy.",          3000],
     ["We don't bite.",         3000],
@@ -3879,7 +3888,17 @@ body.tbm-3d-failed .tbm-brain__pix img.brain-base {
       setTimeout(tick, phrases[idx][1]);
     }, 280);
   }
-  setTimeout(tick, phrases[0][1]);
+
+  // Stays parked on "Start your project" until the user moves their cursor into the closing section.
+  // First mousemove in #contact → start the rotation cadence.
+  let started = false;
+  function startCycle() {
+    if (started) return;
+    started = true;
+    setTimeout(tick, phrases[0][1]);
+  }
+  closing.addEventListener('mousemove', startCycle, { once: true });
+  closing.addEventListener('touchstart', startCycle, { once: true, passive: true });
 })();
 
 /* ========== STUDIO FLOOR — Case Studies pan with inertia ========== */
